@@ -15,7 +15,7 @@ export default function Element({
          <Paper
             component="a"
             href={`/cards/${encodeURIComponent(id)}`}
-            className="my-4 w-11/12"
+            className="my-3 w-11/12"
             withBorder
          >
             <img
