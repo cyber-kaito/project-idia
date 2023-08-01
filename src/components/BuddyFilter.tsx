@@ -5,7 +5,7 @@ export default function BuddyFilter() {
       <div className="flex justify-center my-2">
          <Select
             label="Filter by Buddy Bonus:"
-            placeholder="Silver"
+            placeholder="🗡Silver"
             searchable
             clearable
             data={[

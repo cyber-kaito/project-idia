@@ -5,7 +5,7 @@ export default function DuoFilter() {
       <div className="flex justify-center my-2">
          <Select
             label="Filter by Duo Partner:"
-            placeholder="Sebek Zigvolt"
+            placeholder="🐊Sebek Zigvolt"
             searchable
             clearable
             data={[

@@ -5,7 +5,7 @@ export default function CharacterFilter() {
       <div className="flex justify-center my-2">
          <Select
             label="Filter by character:"
-            placeholder="Malleus Draconia"
+            placeholder="🐉Malleus Draconia"
             searchable
             clearable
             data={[

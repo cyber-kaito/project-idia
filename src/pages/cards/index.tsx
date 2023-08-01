@@ -9,7 +9,7 @@ export default function Page() {
       <>
          <div className="grid grid-cols-2 gap-x-32 justify-center items-center">
             <h1 className="text-left text-2xl pt-4 pl-4 font-bold">Cards</h1>
-            <Button onClick={toggle} variant="outline" color="gray">
+            <Button onClick={toggle} variant="outline" color="gray" size="md">
                Filters
             </Button>
          </div>
