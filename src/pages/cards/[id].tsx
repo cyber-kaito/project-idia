@@ -1,6 +1,10 @@
 import { Tabs, Divider, Grid } from "@mantine/core";
+import { getAssetURL } from "../../utils";
+import { useRouter } from "next/router";
 
 export default function Page() {
+   const router = useRouter();
+   const { id } = router.query;
    return (
       <>
          <h1 className="text-xl sm:text-2xl font-bold pb-3">Birthday Boy</h1>
@@ -14,7 +18,9 @@ export default function Page() {
                <Tabs.Panel value="normal" pt="xs">
                   <img
                      className="flex justify-center items-center w-full"
-                     src="/card_full_3_normal.webp"
+                     src={getAssetURL(
+                        `images_webp/cards/full_${id}_normal.webp`
+                     )}
                      alt="????????"
                   />
                </Tabs.Panel>
@@ -22,7 +28,9 @@ export default function Page() {
                <Tabs.Panel value="groovy" pt="xs">
                   <img
                      className="flex justify-center items-center w-full"
-                     src="/card_full_3_groovy.webp"
+                     src={getAssetURL(
+                        `images_webp/cards/full_${id}_groovy.webp`
+                     )}
                      alt="????????"
                   />
                </Tabs.Panel>
@@ -75,11 +83,15 @@ export default function Page() {
             </Grid>
             <Divider></Divider>
             <Grid justify="space-between" className="pt-3 pb-2">
-               <Grid.Col span={6} className="text-md sm:text-lg font-bold">
+               <Grid.Col span={10} className="text-md sm:text-lg font-bold">
                   Thumbnail
                </Grid.Col>
-               <Grid.Col span={6} className="text-md sm:text-lg text-right">
-                  n/a
+               <Grid.Col span={2} className="text-md sm:text-lg text-right">
+                  <img
+                     className="w-24"
+                     src="/thumb_189_normal.png"
+                     alt="?????"
+                  ></img>
                </Grid.Col>
             </Grid>
             <Divider></Divider>

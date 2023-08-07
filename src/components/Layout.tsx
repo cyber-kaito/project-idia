@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 import {
    AppShell,
    Navbar,
@@ -35,14 +36,14 @@ export default function Layout({ children }: { children: any }) {
                withBorder
             >
                <Navbar.Section mt="lg" ml="md">
-                  <Text component="a" href="/" fz="lg">
+                  <Link href="/" className="text-lg">
                      Home
-                  </Text>
+                  </Link>
                </Navbar.Section>
                <Navbar.Section mt="lg" ml="md">
-                  <Text component="a" href="/cards" fz="lg">
+                  <Link href="/cards" className="text-lg">
                      Cards
-                  </Text>
+                  </Link>
                </Navbar.Section>
             </Navbar>
          }
@@ -65,7 +66,7 @@ export default function Layout({ children }: { children: any }) {
                      />
                   </MediaQuery>
 
-                  <Text fz="xl">TWST Website Title</Text>
+                  <Text fz="xl">Project Idia</Text>
                </div>
             </Header>
          }
