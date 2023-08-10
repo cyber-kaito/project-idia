@@ -3,7 +3,7 @@ import Element from "../components/Element";
 export default function Gallery() {
    return (
       <>
-         <div className="flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-3">
+         <div className="flex flex-col sm:grid sm:gap-x-4 sm:grid-cols-2 lg:grid-cols-3">
             <Element id={1} />
             <Element id={2} />
             <Element id={3} />

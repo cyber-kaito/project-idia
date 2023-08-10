@@ -1,5 +1,5 @@
 import { Paper } from "@mantine/core";
-import { getAssetURL } from ".././utils";
+import { getAssetURL } from "../../../utils";
 import Link from "next/link";
 
 export default function Element({ id }: { id: number }) {
@@ -12,11 +12,11 @@ export default function Element({ id }: { id: number }) {
             }}
             as={`/cards/${encodeURIComponent(id)}`}
          >
-            <Paper className="my-3 w-11/12" withBorder>
+            <Paper className="my-3 w-full" withBorder>
                <img
-                  src="/r.webp"
+                  src="/r_banner.webp"
                   alt="R icon"
-                  className="absolute z-10 p-2 w-18"
+                  className="absolute z-10 w-10 -mt-1 ml-1"
                   loading="lazy"
                   decoding="async"
                />

@@ -45,6 +45,11 @@ export default function Layout({ children }: { children: any }) {
                      Cards
                   </Link>
                </Navbar.Section>
+               <Navbar.Section mt="lg" ml="md">
+                  <Link href="/" className="text-lg">
+                     Animations
+                  </Link>
+               </Navbar.Section>
             </Navbar>
          }
          header={

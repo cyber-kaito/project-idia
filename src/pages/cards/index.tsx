@@ -1,5 +1,5 @@
-import Gallery from "../../components/Gallery";
-import CardFilter from "../../components/CardFilter";
+import Gallery from "./components/Gallery";
+import CardFilter from "./components/filters/CardFilter";
 import { Collapse, Button } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 

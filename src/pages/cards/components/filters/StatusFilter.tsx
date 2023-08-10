@@ -115,6 +115,11 @@ export default function StatusFilter() {
                   group: "Evasion Boost",
                },
                {
+                  value: "moeb",
+                  label: "Modest Evasion Boost",
+                  group: "Evasion Boost",
+               },
+               {
                   value: "bim",
                   label: "Blind Immunity",
                   group: "Debuff Immunity",
