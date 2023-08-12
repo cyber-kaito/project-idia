@@ -39,7 +39,7 @@ export default function CardTabs({
             <Tabs.Panel value="outfit" pt="xs">
                <img
                   className="flex justify-center items-center w-full m-auto sm:w-1/2"
-                  src="/outfit_189.png"
+                  src={getAssetURL(`images_webp/outfits/outfit_${id}.webp`)}
                   alt="?????"
                />
             </Tabs.Panel>
