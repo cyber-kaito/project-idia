@@ -1,11 +1,13 @@
 import { Tabs } from "@mantine/core";
 import { getAssetURL } from "../../../utils";
+import card_data from "../../../cards.json";
 
 export default function CardTabs({
    id,
 }: {
    id: string | string[] | undefined;
 }) {
+   const card = card_data.find((data) => data.cardid.toString() === id);
    return (
       <div className="flex w-full sm:w-5/6">
          <Tabs
@@ -24,7 +26,14 @@ export default function CardTabs({
                <img
                   className="flex justify-center items-center w-full"
                   src={getAssetURL(`images_webp/cards/full_${id}_normal.webp`)}
-                  alt="????????"
+                  alt={card?.studentname.concat(
+                     " ",
+                     card.cardrarity,
+                     " ",
+                     card.cardtitle,
+                     " ",
+                     "Normal"
+                  )}
                />
             </Tabs.Panel>
 
@@ -32,7 +41,14 @@ export default function CardTabs({
                <img
                   className="flex justify-center items-center w-full"
                   src={getAssetURL(`images_webp/cards/full_${id}_groovy.webp`)}
-                  alt="????????"
+                  alt={card?.studentname.concat(
+                     " ",
+                     card.cardrarity,
+                     " ",
+                     card.cardtitle,
+                     " ",
+                     "Groovy"
+                  )}
                />
             </Tabs.Panel>
 
@@ -40,7 +56,14 @@ export default function CardTabs({
                <img
                   className="flex justify-center items-center w-full m-auto sm:w-1/2"
                   src={getAssetURL(`images_webp/outfits/outfit_${id}.webp`)}
-                  alt="?????"
+                  alt={card?.studentname.concat(
+                     " ",
+                     card.cardrarity,
+                     " ",
+                     card.cardtitle,
+                     " ",
+                     "Outfit"
+                  )}
                />
             </Tabs.Panel>
          </Tabs>

@@ -1,10 +1,12 @@
 import { Grid, Divider, Tabs } from "@mantine/core";
+import card_data from "../../../cards.json";
 
 export default function CardStats({
    id,
 }: {
    id: string | string[] | undefined;
 }) {
+   const card = card_data.find((data) => data.cardid.toString() === id);
    return (
       <div className="w-full pt-3 sm:w-5/6">
          <Tabs color="dark" variant="outline" defaultValue="min">
@@ -18,7 +20,7 @@ export default function CardStats({
                      HP
                   </Grid.Col>
                   <Grid.Col span={6} className="text-md sm:text-lg text-right">
-                     2272
+                     {card?.minhp}
                   </Grid.Col>
                </Grid>
                <Divider></Divider>
@@ -27,7 +29,7 @@ export default function CardStats({
                      POW
                   </Grid.Col>
                   <Grid.Col span={6} className="text-md sm:text-lg text-right">
-                     1389
+                     {card?.minpow}
                   </Grid.Col>
                </Grid>
             </Tabs.Panel>
@@ -37,7 +39,7 @@ export default function CardStats({
                      HP
                   </Grid.Col>
                   <Grid.Col span={6} className="text-md sm:text-lg text-right">
-                     10303
+                     {card?.maxhp}
                   </Grid.Col>
                </Grid>
                <Divider></Divider>
@@ -46,7 +48,7 @@ export default function CardStats({
                      POW
                   </Grid.Col>
                   <Grid.Col span={6} className="text-md sm:text-lg text-right">
-                     6757
+                     {card?.maxpow}
                   </Grid.Col>
                </Grid>
             </Tabs.Panel>
