@@ -1,6 +1,5 @@
 import { Divider, Grid, Accordion } from "@mantine/core";
 import { getAssetURL } from "../../../utils";
-import card_data from "../../../cards.json";
 
 function SpellElement({ spell }: { spell: string | undefined }) {
    if (spell?.startsWith("Fire") || spell?.startsWith("Flame")) {
@@ -235,11 +234,38 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
 }
 
 export default function CardInfo({
-   id,
+   cardID,
+   cardRarity,
+   studentName,
+   cardTitle,
+   cardType,
+   cardAcquisition,
+   spell1,
+   spell2,
+   spell3,
+   buddy1,
+   buddy2,
+   buddy3,
+   bonus1,
+   bonus2,
+   bonus3,
 }: {
-   id: string | string[] | undefined;
+   cardID: number;
+   cardRarity: string;
+   studentName: string;
+   cardTitle: string;
+   cardType: string;
+   cardAcquisition: string;
+   spell1: string;
+   spell2: string;
+   spell3: string;
+   buddy1: string;
+   buddy2: string;
+   buddy3: string;
+   bonus1: string;
+   bonus2: string;
+   bonus3: string;
 }) {
-   const card = card_data.find((data) => data.cardid.toString() === id);
    return (
       <Accordion
          variant="default"
@@ -263,7 +289,7 @@ export default function CardInfo({
                         span={6}
                         className="text-md sm:text-lg text-right my-auto"
                      >
-                        {card?.studentname}
+                        {studentName}
                      </Grid.Col>
                   </Grid>
                   <Divider></Divider>
@@ -278,7 +304,7 @@ export default function CardInfo({
                         span={6}
                         className="text-md sm:text-lg text-right my-auto"
                      >
-                        {card?.cardtitle}
+                        {cardTitle}
                      </Grid.Col>
                   </Grid>
                   <Divider></Divider>
@@ -293,7 +319,7 @@ export default function CardInfo({
                         span={6}
                         className="text-md sm:text-lg text-right my-auto"
                      >
-                        {card?.cardrarity}
+                        {cardRarity}
                      </Grid.Col>
                   </Grid>
                   <Divider></Divider>
@@ -308,7 +334,7 @@ export default function CardInfo({
                         span={6}
                         className="text-md sm:text-lg text-right my-auto"
                      >
-                        {card?.cardtype}
+                        {cardType}
                      </Grid.Col>
                   </Grid>
                   <Divider></Divider>
@@ -323,7 +349,7 @@ export default function CardInfo({
                         span={6}
                         className="text-md sm:text-lg text-right my-auto"
                      >
-                        {card?.acquisition}
+                        {cardAcquisition}
                      </Grid.Col>
                   </Grid>
                   <Divider></Divider>
@@ -341,13 +367,13 @@ export default function CardInfo({
                         <img
                            className="w-24"
                            src={getAssetURL(
-                              `images_webp/thumbnails/cards/thumb_${id}_normal.webp`
+                              `images_webp/thumbnails/cards/thumb_${cardID}_normal.webp`
                            )}
-                           alt={card?.studentname.concat(
+                           alt={studentName.concat(
                               " ",
-                              card.cardrarity,
+                              cardRarity,
                               " ",
-                              card.cardtitle,
+                              cardTitle,
                               " ",
                               "Normal Thumbnail"
                            )}
@@ -360,15 +386,15 @@ export default function CardInfo({
                         <img
                            className="w-24"
                            src={getAssetURL(
-                              `images_webp/thumbnails/cards/thumb_${id}_groovy.webp`
+                              `images_webp/thumbnails/cards/thumb_${cardID}_groovy.webp`
                            )}
-                           alt={card?.studentname.concat(
+                           alt={studentName.concat(
                               " ",
-                              card.cardrarity,
+                              cardRarity,
                               " ",
-                              card.cardtitle,
+                              cardTitle,
                               " ",
-                              "Groovy Thumbnail"
+                              "Normal Thumbnail"
                            )}
                         ></img>
                      </Grid.Col>
@@ -391,10 +417,10 @@ export default function CardInfo({
                         span={6}
                         className="text-md sm:text-lg text-right my-auto"
                      >
-                        {card?.spell1}
+                        {spell1}
                      </Grid.Col>
                      <Grid.Col span={2} className="my-auto">
-                        <SpellElement spell={card?.spell1}></SpellElement>
+                        <SpellElement spell={spell1}></SpellElement>
                      </Grid.Col>
                   </Grid>
                   <Divider></Divider>
@@ -409,10 +435,10 @@ export default function CardInfo({
                         span={6}
                         className="text-md sm:text-lg text-right my-auto"
                      >
-                        {card?.spell2}
+                        {spell2}
                      </Grid.Col>
                      <Grid.Col span={2}>
-                        <SpellElement spell={card?.spell2}></SpellElement>
+                        <SpellElement spell={spell2}></SpellElement>
                      </Grid.Col>
                   </Grid>
                   <Divider></Divider>
@@ -427,10 +453,10 @@ export default function CardInfo({
                         span={6}
                         className="text-md sm:text-lg text-right my-auto"
                      >
-                        {card?.spell3}
+                        {spell3}
                      </Grid.Col>
                      <Grid.Col span={2}>
-                        <SpellElement spell={card?.spell3}></SpellElement>
+                        <SpellElement spell={spell3}></SpellElement>
                      </Grid.Col>
                   </Grid>
                </Accordion.Panel>
@@ -457,13 +483,13 @@ export default function CardInfo({
                         span={5}
                         className="text-md sm:text-lg font-bold my-auto"
                      >
-                        {card?.buddy1}
+                        {buddy1}
                      </Grid.Col>
                      <Grid.Col
                         span={5}
                         className="text-md sm:text-lg text-right my-auto"
                      >
-                        {card?.bonus1}
+                        {bonus1}
                      </Grid.Col>
                   </Grid>
                   <Divider></Divider>
@@ -484,13 +510,13 @@ export default function CardInfo({
                         span={5}
                         className="text-md sm:text-lg font-bold my-auto"
                      >
-                        {card?.buddy2}
+                        {buddy2}
                      </Grid.Col>
                      <Grid.Col
                         span={5}
                         className="text-md sm:text-lg text-right my-auto"
                      >
-                        {card?.bonus2}
+                        {bonus2}
                      </Grid.Col>
                   </Grid>
                   <Divider></Divider>
@@ -511,13 +537,13 @@ export default function CardInfo({
                         span={5}
                         className="text-md sm:text-lg font-bold my-auto"
                      >
-                        {card?.buddy3}
+                        {buddy3}
                      </Grid.Col>
                      <Grid.Col
                         span={5}
                         className="text-md sm:text-lg text-right my-auto"
                      >
-                        {card?.bonus3}
+                        {bonus3}
                      </Grid.Col>
                   </Grid>
                </Accordion.Panel>

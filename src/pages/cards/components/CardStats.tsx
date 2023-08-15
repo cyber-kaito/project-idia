@@ -1,12 +1,16 @@
 import { Grid, Divider, Tabs } from "@mantine/core";
-import card_data from "../../../cards.json";
 
 export default function CardStats({
-   id,
+   minhp,
+   minpow,
+   maxhp,
+   maxpow,
 }: {
-   id: string | string[] | undefined;
+   minhp: number;
+   minpow: number;
+   maxhp: number;
+   maxpow: number;
 }) {
-   const card = card_data.find((data) => data.cardid.toString() === id);
    return (
       <div className="w-full pt-3 sm:w-5/6">
          <Tabs color="dark" variant="outline" defaultValue="min">
@@ -20,7 +24,7 @@ export default function CardStats({
                      HP
                   </Grid.Col>
                   <Grid.Col span={6} className="text-md sm:text-lg text-right">
-                     {card?.minhp}
+                     {minhp}
                   </Grid.Col>
                </Grid>
                <Divider></Divider>
@@ -29,7 +33,7 @@ export default function CardStats({
                      POW
                   </Grid.Col>
                   <Grid.Col span={6} className="text-md sm:text-lg text-right">
-                     {card?.minpow}
+                     {minpow}
                   </Grid.Col>
                </Grid>
             </Tabs.Panel>
@@ -39,7 +43,7 @@ export default function CardStats({
                      HP
                   </Grid.Col>
                   <Grid.Col span={6} className="text-md sm:text-lg text-right">
-                     {card?.maxhp}
+                     {maxhp}
                   </Grid.Col>
                </Grid>
                <Divider></Divider>
@@ -48,7 +52,7 @@ export default function CardStats({
                      POW
                   </Grid.Col>
                   <Grid.Col span={6} className="text-md sm:text-lg text-right">
-                     {card?.maxpow}
+                     {maxpow}
                   </Grid.Col>
                </Grid>
             </Tabs.Panel>

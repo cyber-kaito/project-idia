@@ -2,8 +2,9 @@ import Gallery from "./components/Gallery";
 import CardFilter from "./components/filters/CardFilter";
 import { Collapse, Button } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
+import { getDataURL } from "../../utils";
 
-export default function Page() {
+export default function Page({ card_data }: { card_data: any[] }) {
    const [opened, { toggle }] = useDisclosure(false);
    return (
       <>
@@ -16,7 +17,18 @@ export default function Page() {
          <Collapse in={opened}>
             <CardFilter />
          </Collapse>
-         <Gallery />
+         <Gallery cards={card_data} />
       </>
    );
+}
+
+export async function getStaticProps() {
+   const res = await fetch(getDataURL(`cards.json`));
+   const card_data = await res.json();
+   return {
+      props: {
+         card_data,
+      },
+      revalidate: 10,
+   };
 }

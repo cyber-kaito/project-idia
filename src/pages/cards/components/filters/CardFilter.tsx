@@ -10,7 +10,7 @@ import SetFilter from "./SetFilter";
 
 export default function CardFilter() {
    return (
-      <>
+      <div className="sm:grid sm:grid-cols-3 sm:gap-x-1">
          <CharacterFilter />
          <DormFilter />
          <RarityFilter />
@@ -20,6 +20,6 @@ export default function CardFilter() {
          <BuddyFilter />
          <DuoFilter />
          <SetFilter />
-      </>
+      </div>
    );
 }
