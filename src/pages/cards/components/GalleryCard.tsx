@@ -36,7 +36,7 @@ function CardRarity({ rarity }: { rarity: string | undefined }) {
    }
 }
 
-export default function Element({
+export default function GalleryCard({
    cardID,
    cardRarity,
    studentName,

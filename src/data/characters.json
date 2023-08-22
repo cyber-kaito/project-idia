@@ -1,0 +1,113 @@
+[
+   {
+      "value": "Riddle Rosehearts",
+      "label": "🌹Riddle Rosehearts",
+      "group": "Heartslabyul"
+   },
+   {
+      "value": "Ace Trappola",
+      "label": "♥️Ace Trappola",
+      "group": "Heartslabyul"
+   },
+   {
+      "value": "Deuce Spade",
+      "label": "♠️Deuce Spade",
+      "group": "Heartslabyul"
+   },
+   {
+      "value": "Cater Diamond",
+      "label": "♦️Cater Diamond",
+      "group": "Heartslabyul"
+   },
+   {
+      "value": "Trey Clover",
+      "label": "♣️Trey Clover",
+      "group": "Heartslabyul"
+   },
+   {
+      "value": "Leona Kingscholar",
+      "label": "🦁Leona Kingscholar",
+      "group": "Savanaclaw"
+   },
+   {
+      "value": "Jack Howl",
+      "label": "🐺Jack Howl",
+      "group": "Savanaclaw"
+   },
+   {
+      "value": "Ruggie Bucchi",
+      "label": "🍩Ruggie Bucchi",
+      "group": "Savanaclaw"
+   },
+   {
+      "value": "Azul Ashengrotto",
+      "label": "🐙Azul Ashengrotto",
+      "group": "Octavinelle"
+   },
+   {
+      "value": "Jade Leech",
+      "label": "🐬Jade Leech",
+      "group": "Octavinelle"
+   },
+   {
+      "value": "Floyd Leech",
+      "label": "🦈Floyd Leech",
+      "group": "Octavinelle"
+   },
+   {
+      "value": "Kalim Al-Asim",
+      "label": "☀️Kalim Al-Asim",
+      "group": "Scarabia"
+   },
+   {
+      "value": "Jamil Viper",
+      "label": "🐍Jamil Viper",
+      "group": "Scarabia"
+   },
+   {
+      "value": "Vil Schoenheit",
+      "label": "👑Vil Schoenheit",
+      "group": "Pomefiore"
+   },
+   {
+      "value": "Epel Felmier",
+      "label": "🏹Epel Felmier",
+      "group": "Pomefiore"
+   },
+   {
+      "value": "Rook Hunt",
+      "label": "🍎Rook Hunt",
+      "group": "Pomefiore"
+   },
+   {
+      "value": "Idia Shroud",
+      "label": "💀Idia Shroud",
+      "group": "Ignihyde"
+   },
+   {
+      "value": "Ortho Shroud",
+      "label": "🤖Ortho Shroud",
+      "group": "Ignihyde"
+   },
+   {
+      "value": "Malleus Draconia",
+      "label": "🐉Malleus Draconia",
+      "group": "Diasomnia"
+   },
+   { "value": "Silver", "label": "🗡Silver", "group": "Diasomnia" },
+   {
+      "value": "Sebek Zigvolt",
+      "label": "🐊Sebek Zigvolt",
+      "group": "Diasomnia"
+   },
+   {
+      "value": "Lilia Vanrouge",
+      "label": "🦇Lilia Vanrouge",
+      "group": "Diasomnia"
+   },
+   {
+      "value": "Grim",
+      "label": "🐈Grim",
+      "group": "Ramshackle Dorm"
+   }
+]
