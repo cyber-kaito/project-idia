@@ -40,6 +40,8 @@ export default function CardTabs({
                      " ",
                      "Normal"
                   )}
+                  loading="lazy"
+                  decoding="async"
                />
             </Tabs.Panel>
 
@@ -57,6 +59,8 @@ export default function CardTabs({
                      " ",
                      "Normal"
                   )}
+                  loading="lazy"
+                  decoding="async"
                />
             </Tabs.Panel>
 
@@ -72,6 +76,8 @@ export default function CardTabs({
                      " ",
                      "Normal"
                   )}
+                  loading="lazy"
+                  decoding="async"
                />
             </Tabs.Panel>
          </Tabs>

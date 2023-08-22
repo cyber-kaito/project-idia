@@ -1,15 +1,313 @@
 import { Divider, Grid, Accordion } from "@mantine/core";
 import { getAssetURL } from "../../../utils";
 
+function BuddyDisplay({
+   buddy1,
+   buddy2,
+   buddy3,
+   bonus1,
+   bonus2,
+   bonus3,
+   rarity,
+}: {
+   buddy1: string | undefined;
+   buddy2: string | undefined;
+   buddy3: string | undefined;
+   bonus1: string | undefined;
+   bonus2: string | undefined;
+   bonus3: string | undefined;
+   rarity: string | undefined;
+}) {
+   if (rarity === "SSR") {
+      return (
+         <>
+            <Grid justify="space-between" className="pt-3 pb-2">
+               <Grid.Col
+                  span={2}
+                  className="text-md sm:text-lg text-right my-auto"
+               >
+                  <BuddyIcon buddy={buddy1} />
+               </Grid.Col>
+               <Grid.Col
+                  span={5}
+                  className="text-md sm:text-lg font-bold my-auto"
+               >
+                  {buddy1}
+               </Grid.Col>
+               <Grid.Col
+                  span={5}
+                  className="text-md sm:text-lg text-right my-auto"
+               >
+                  {bonus1}
+               </Grid.Col>
+            </Grid>
+            <Divider></Divider>
+            <Grid justify="space-between" className="pt-3 pb-2">
+               <Grid.Col
+                  span={2}
+                  className="text-md sm:text-lg text-right my-auto"
+               >
+                  <BuddyIcon buddy={buddy2} />
+               </Grid.Col>
+               <Grid.Col
+                  span={5}
+                  className="text-md sm:text-lg font-bold my-auto"
+               >
+                  {buddy2}
+               </Grid.Col>
+               <Grid.Col
+                  span={5}
+                  className="text-md sm:text-lg text-right my-auto"
+               >
+                  {bonus2}
+               </Grid.Col>
+            </Grid>
+            <Divider></Divider>
+            <Grid justify="space-between" className="pt-3">
+               <Grid.Col
+                  span={2}
+                  className="text-md sm:text-lg text-right my-auto"
+               >
+                  <BuddyIcon buddy={buddy3} />
+               </Grid.Col>
+               <Grid.Col
+                  span={5}
+                  className="text-md sm:text-lg font-bold my-auto"
+               >
+                  {buddy3}
+               </Grid.Col>
+               <Grid.Col
+                  span={5}
+                  className="text-md sm:text-lg text-right my-auto"
+               >
+                  {bonus3}
+               </Grid.Col>
+            </Grid>
+         </>
+      );
+   } else if (rarity === "SR") {
+      return (
+         <>
+            <Grid justify="space-between" className="pt-3 pb-2">
+               <Grid.Col
+                  span={2}
+                  className="text-md sm:text-lg text-right my-auto"
+               >
+                  <BuddyIcon buddy={buddy1} />
+               </Grid.Col>
+               <Grid.Col
+                  span={5}
+                  className="text-md sm:text-lg font-bold my-auto"
+               >
+                  {buddy1}
+               </Grid.Col>
+               <Grid.Col
+                  span={5}
+                  className="text-md sm:text-lg text-right my-auto"
+               >
+                  {bonus1}
+               </Grid.Col>
+            </Grid>
+            <Divider></Divider>
+            <Grid justify="space-between" className="pt-3 pb-2">
+               <Grid.Col
+                  span={2}
+                  className="text-md sm:text-lg text-right my-auto"
+               >
+                  <BuddyIcon buddy={buddy2} />
+               </Grid.Col>
+               <Grid.Col
+                  span={5}
+                  className="text-md sm:text-lg font-bold my-auto"
+               >
+                  {buddy2}
+               </Grid.Col>
+               <Grid.Col
+                  span={5}
+                  className="text-md sm:text-lg text-right my-auto"
+               >
+                  {bonus2}
+               </Grid.Col>
+            </Grid>
+         </>
+      );
+   } else {
+      return (
+         <>
+            <Grid justify="space-between" className="pt-3 pb-2">
+               <Grid.Col
+                  span={2}
+                  className="text-md sm:text-lg text-right my-auto"
+               >
+                  <BuddyIcon buddy={buddy1} />
+               </Grid.Col>
+               <Grid.Col
+                  span={5}
+                  className="text-md sm:text-lg font-bold my-auto"
+               >
+                  {buddy1}
+               </Grid.Col>
+               <Grid.Col
+                  span={5}
+                  className="text-md sm:text-lg text-right my-auto"
+               >
+                  {bonus1}
+               </Grid.Col>
+            </Grid>
+         </>
+      );
+   }
+}
+
 function SpellElement({ spell }: { spell: string | undefined }) {
    if (spell?.startsWith("Fire") || spell?.startsWith("Flame")) {
-      return <img src="/fire.webp" alt="Fire element banner"></img>;
+      return (
+         <img
+            src="/fire.webp"
+            alt="Fire element banner"
+            loading="lazy"
+            decoding="async"
+         ></img>
+      );
    } else if (spell?.startsWith("Water") || spell?.startsWith("Aqua")) {
-      return <img src="/water.webp" alt="Water element banner"></img>;
+      return (
+         <img
+            src="/water.webp"
+            alt="Water element banner"
+            loading="lazy"
+            decoding="async"
+         ></img>
+      );
    } else if (spell?.startsWith("Leaf") || spell?.startsWith("Forest")) {
-      return <img src="/flora.webp" alt="Flora element banner"></img>;
+      return (
+         <img
+            src="/flora.webp"
+            alt="Flora element banner"
+            loading="lazy"
+            decoding="async"
+         ></img>
+      );
    } else {
-      return <img src="/cosmic.webp" alt="Cosmic element banner"></img>;
+      return (
+         <img
+            src="/cosmic.webp"
+            alt="Cosmic element banner"
+            loading="lazy"
+            decoding="async"
+         ></img>
+      );
+   }
+}
+
+function SpellDisplay({
+   spell1,
+   spell2,
+   spell3,
+   rarity,
+}: {
+   spell1: string | undefined;
+   spell2: string | undefined;
+   spell3: string | undefined;
+   rarity: string | undefined;
+}) {
+   if (rarity === "SSR") {
+      return (
+         <>
+            <Grid justify="space-between" className="pt-3 pb-2">
+               <Grid.Col
+                  span={4}
+                  className="text-md sm:text-lg font-bold my-auto"
+               >
+                  Spell 1
+               </Grid.Col>
+               <Grid.Col
+                  span={6}
+                  className="text-md sm:text-lg text-right my-auto"
+               >
+                  {spell1}
+               </Grid.Col>
+               <Grid.Col span={2} className="my-auto">
+                  <SpellElement spell={spell1}></SpellElement>
+               </Grid.Col>
+            </Grid>
+            <Divider></Divider>
+            <Grid justify="space-between" className="pt-3 pb-2">
+               <Grid.Col
+                  span={4}
+                  className="text-md sm:text-lg font-bold my-auto"
+               >
+                  Spell 2
+               </Grid.Col>
+               <Grid.Col
+                  span={6}
+                  className="text-md sm:text-lg text-right my-auto"
+               >
+                  {spell2}
+               </Grid.Col>
+               <Grid.Col span={2}>
+                  <SpellElement spell={spell2}></SpellElement>
+               </Grid.Col>
+            </Grid>
+            <Divider></Divider>
+            <Grid justify="space-between" className="pt-3">
+               <Grid.Col
+                  span={4}
+                  className="text-md sm:text-lg font-bold my-auto"
+               >
+                  Spell 3
+               </Grid.Col>
+               <Grid.Col
+                  span={6}
+                  className="text-md sm:text-lg text-right my-auto"
+               >
+                  {spell3}
+               </Grid.Col>
+               <Grid.Col span={2}>
+                  <SpellElement spell={spell3}></SpellElement>
+               </Grid.Col>
+            </Grid>
+         </>
+      );
+   } else {
+      return (
+         <>
+            <Grid justify="space-between" className="pt-3 pb-2">
+               <Grid.Col
+                  span={4}
+                  className="text-md sm:text-lg font-bold my-auto"
+               >
+                  Spell 1
+               </Grid.Col>
+               <Grid.Col
+                  span={6}
+                  className="text-md sm:text-lg text-right my-auto"
+               >
+                  {spell1}
+               </Grid.Col>
+               <Grid.Col span={2} className="my-auto">
+                  <SpellElement spell={spell1}></SpellElement>
+               </Grid.Col>
+            </Grid>
+            <Divider></Divider>
+            <Grid justify="space-between" className="pt-3 pb-2">
+               <Grid.Col
+                  span={4}
+                  className="text-md sm:text-lg font-bold my-auto"
+               >
+                  Spell 2
+               </Grid.Col>
+               <Grid.Col
+                  span={6}
+                  className="text-md sm:text-lg text-right my-auto"
+               >
+                  {spell2}
+               </Grid.Col>
+               <Grid.Col span={2}>
+                  <SpellElement spell={spell2}></SpellElement>
+               </Grid.Col>
+            </Grid>
+         </>
+      );
    }
 }
 
@@ -22,6 +320,8 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
                `images_webp/thumbnails/characters/riddle_icon.webp`
             )}
             alt="Riddle icon"
+            loading="lazy"
+            decoding="async"
          ></img>
       );
    } else if (buddy!.startsWith("Ace")) {
@@ -30,6 +330,8 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
             className="w-24"
             src={getAssetURL(`images_webp/thumbnails/characters/ace_icon.webp`)}
             alt="Ace icon"
+            loading="lazy"
+            decoding="async"
          ></img>
       );
    } else if (buddy!.startsWith("Deuce")) {
@@ -40,6 +342,8 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
                `images_webp/thumbnails/characters/deuce_icon.webp`
             )}
             alt="Deuce icon"
+            loading="lazy"
+            decoding="async"
          ></img>
       );
    } else if (buddy!.startsWith("Cater")) {
@@ -50,6 +354,8 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
                `images_webp/thumbnails/characters/cater_icon.webp`
             )}
             alt="Cater icon"
+            loading="lazy"
+            decoding="async"
          ></img>
       );
    } else if (buddy!.startsWith("Trey")) {
@@ -60,6 +366,8 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
                `images_webp/thumbnails/characters/trey_icon.webp`
             )}
             alt="Trey icon"
+            loading="lazy"
+            decoding="async"
          ></img>
       );
    } else if (buddy!.startsWith("Leona")) {
@@ -70,6 +378,8 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
                `images_webp/thumbnails/characters/leona_icon.webp`
             )}
             alt="Leona icon"
+            loading="lazy"
+            decoding="async"
          ></img>
       );
    } else if (buddy!.startsWith("Jack")) {
@@ -80,6 +390,8 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
                `images_webp/thumbnails/characters/jack_icon.webp`
             )}
             alt="Jack icon"
+            loading="lazy"
+            decoding="async"
          ></img>
       );
    } else if (buddy!.startsWith("Ruggie")) {
@@ -90,6 +402,8 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
                `images_webp/thumbnails/characters/ruggie_icon.webp`
             )}
             alt="Ruggie icon"
+            loading="lazy"
+            decoding="async"
          ></img>
       );
    } else if (buddy!.startsWith("Azul")) {
@@ -100,6 +414,8 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
                `images_webp/thumbnails/characters/azul_icon.webp`
             )}
             alt="Azul icon"
+            loading="lazy"
+            decoding="async"
          ></img>
       );
    } else if (buddy!.startsWith("Jade")) {
@@ -110,6 +426,8 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
                `images_webp/thumbnails/characters/jade_icon.webp`
             )}
             alt="Jade icon"
+            loading="lazy"
+            decoding="async"
          ></img>
       );
    } else if (buddy!.startsWith("Floyd")) {
@@ -120,6 +438,8 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
                `images_webp/thumbnails/characters/floyd_icon.webp`
             )}
             alt="Floyd icon"
+            loading="lazy"
+            decoding="async"
          ></img>
       );
    } else if (buddy!.startsWith("Kalim")) {
@@ -130,6 +450,8 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
                `images_webp/thumbnails/characters/kalim_icon.webp`
             )}
             alt="Kalim icon"
+            loading="lazy"
+            decoding="async"
          ></img>
       );
    } else if (buddy!.startsWith("Jamil")) {
@@ -140,6 +462,8 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
                `images_webp/thumbnails/characters/jamil_icon.webp`
             )}
             alt="Jamil icon"
+            loading="lazy"
+            decoding="async"
          ></img>
       );
    } else if (buddy!.startsWith("Vil")) {
@@ -148,6 +472,8 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
             className="w-24"
             src={getAssetURL(`images_webp/thumbnails/characters/vil_icon.webp`)}
             alt="Vil icon"
+            loading="lazy"
+            decoding="async"
          ></img>
       );
    } else if (buddy!.startsWith("Epel")) {
@@ -158,6 +484,8 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
                `images_webp/thumbnails/characters/epel_icon.webp`
             )}
             alt="Epel icon"
+            loading="lazy"
+            decoding="async"
          ></img>
       );
    } else if (buddy!.startsWith("Rook")) {
@@ -168,6 +496,8 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
                `images_webp/thumbnails/characters/rook_icon.webp`
             )}
             alt="Rook icon"
+            loading="lazy"
+            decoding="async"
          ></img>
       );
    } else if (buddy!.startsWith("Idia")) {
@@ -178,6 +508,8 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
                `images_webp/thumbnails/characters/idia_icon.webp`
             )}
             alt="Idia icon"
+            loading="lazy"
+            decoding="async"
          ></img>
       );
    } else if (buddy!.startsWith("Ortho")) {
@@ -188,6 +520,8 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
                `images_webp/thumbnails/characters/ortho_icon.webp`
             )}
             alt="Ortho icon"
+            loading="lazy"
+            decoding="async"
          ></img>
       );
    } else if (buddy!.startsWith("Malleus")) {
@@ -198,6 +532,8 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
                `images_webp/thumbnails/characters/malleus_icon.webp`
             )}
             alt="Malleus icon"
+            loading="lazy"
+            decoding="async"
          ></img>
       );
    } else if (buddy!.startsWith("Silver")) {
@@ -208,6 +544,8 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
                `images_webp/thumbnails/characters/silver_icon.webp`
             )}
             alt="Silver icon"
+            loading="lazy"
+            decoding="async"
          ></img>
       );
    } else if (buddy!.startsWith("Sebek")) {
@@ -218,6 +556,8 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
                `images_webp/thumbnails/characters/sebek_icon.webp`
             )}
             alt="Sebek icon"
+            loading="lazy"
+            decoding="async"
          ></img>
       );
    } else if (buddy!.startsWith("Lilia")) {
@@ -228,6 +568,8 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
                `images_webp/thumbnails/characters/lilia_icon.webp`
             )}
             alt="Lilia icon"
+            loading="lazy"
+            decoding="async"
          ></img>
       );
    }
@@ -377,6 +719,8 @@ export default function CardInfo({
                               " ",
                               "Normal Thumbnail"
                            )}
+                           loading="lazy"
+                           decoding="async"
                         ></img>
                      </Grid.Col>
                      <Grid.Col
@@ -394,8 +738,10 @@ export default function CardInfo({
                               " ",
                               cardTitle,
                               " ",
-                              "Normal Thumbnail"
+                              "Groovy Thumbnail"
                            )}
+                           loading="lazy"
+                           decoding="async"
                         ></img>
                      </Grid.Col>
                   </Grid>
@@ -406,59 +752,12 @@ export default function CardInfo({
             <Accordion.Control className="text-lg">
                Spell Information
                <Accordion.Panel>
-                  <Grid justify="space-between" className="pt-3 pb-2">
-                     <Grid.Col
-                        span={4}
-                        className="text-md sm:text-lg font-bold my-auto"
-                     >
-                        Spell 1
-                     </Grid.Col>
-                     <Grid.Col
-                        span={6}
-                        className="text-md sm:text-lg text-right my-auto"
-                     >
-                        {spell1}
-                     </Grid.Col>
-                     <Grid.Col span={2} className="my-auto">
-                        <SpellElement spell={spell1}></SpellElement>
-                     </Grid.Col>
-                  </Grid>
-                  <Divider></Divider>
-                  <Grid justify="space-between" className="pt-3 pb-2">
-                     <Grid.Col
-                        span={4}
-                        className="text-md sm:text-lg font-bold my-auto"
-                     >
-                        Spell 2
-                     </Grid.Col>
-                     <Grid.Col
-                        span={6}
-                        className="text-md sm:text-lg text-right my-auto"
-                     >
-                        {spell2}
-                     </Grid.Col>
-                     <Grid.Col span={2}>
-                        <SpellElement spell={spell2}></SpellElement>
-                     </Grid.Col>
-                  </Grid>
-                  <Divider></Divider>
-                  <Grid justify="space-between" className="pt-3">
-                     <Grid.Col
-                        span={4}
-                        className="text-md sm:text-lg font-bold my-auto"
-                     >
-                        Spell 3
-                     </Grid.Col>
-                     <Grid.Col
-                        span={6}
-                        className="text-md sm:text-lg text-right my-auto"
-                     >
-                        {spell3}
-                     </Grid.Col>
-                     <Grid.Col span={2}>
-                        <SpellElement spell={spell3}></SpellElement>
-                     </Grid.Col>
-                  </Grid>
+                  <SpellDisplay
+                     spell1={spell1}
+                     spell2={spell2}
+                     spell3={spell3}
+                     rarity={cardRarity}
+                  />
                </Accordion.Panel>
             </Accordion.Control>
          </Accordion.Item>
@@ -466,86 +765,15 @@ export default function CardInfo({
             <Accordion.Control className="text-lg">
                Buddy Bonus
                <Accordion.Panel>
-                  <Grid justify="space-between" className="pt-3 pb-2">
-                     <Grid.Col
-                        span={2}
-                        className="text-md sm:text-lg text-right my-auto"
-                     >
-                        <img
-                           className="w-24"
-                           src={getAssetURL(
-                              `images_webp/thumbnails/characters/riddle_icon.webp`
-                           )}
-                           alt="Riddle icon"
-                        ></img>
-                     </Grid.Col>
-                     <Grid.Col
-                        span={5}
-                        className="text-md sm:text-lg font-bold my-auto"
-                     >
-                        {buddy1}
-                     </Grid.Col>
-                     <Grid.Col
-                        span={5}
-                        className="text-md sm:text-lg text-right my-auto"
-                     >
-                        {bonus1}
-                     </Grid.Col>
-                  </Grid>
-                  <Divider></Divider>
-                  <Grid justify="space-between" className="pt-3 pb-2">
-                     <Grid.Col
-                        span={2}
-                        className="text-md sm:text-lg text-right my-auto"
-                     >
-                        <img
-                           className="w-24"
-                           src={getAssetURL(
-                              `images_webp/thumbnails/characters/riddle_icon.webp`
-                           )}
-                           alt="Riddle icon"
-                        ></img>
-                     </Grid.Col>
-                     <Grid.Col
-                        span={5}
-                        className="text-md sm:text-lg font-bold my-auto"
-                     >
-                        {buddy2}
-                     </Grid.Col>
-                     <Grid.Col
-                        span={5}
-                        className="text-md sm:text-lg text-right my-auto"
-                     >
-                        {bonus2}
-                     </Grid.Col>
-                  </Grid>
-                  <Divider></Divider>
-                  <Grid justify="space-between" className="pt-3">
-                     <Grid.Col
-                        span={2}
-                        className="text-md sm:text-lg text-right my-auto"
-                     >
-                        <img
-                           className="w-24"
-                           src={getAssetURL(
-                              `images_webp/thumbnails/characters/riddle_icon.webp`
-                           )}
-                           alt="Riddle icon"
-                        ></img>
-                     </Grid.Col>
-                     <Grid.Col
-                        span={5}
-                        className="text-md sm:text-lg font-bold my-auto"
-                     >
-                        {buddy3}
-                     </Grid.Col>
-                     <Grid.Col
-                        span={5}
-                        className="text-md sm:text-lg text-right my-auto"
-                     >
-                        {bonus3}
-                     </Grid.Col>
-                  </Grid>
+                  <BuddyDisplay
+                     buddy1={buddy1}
+                     buddy2={buddy2}
+                     buddy3={buddy3}
+                     bonus1={bonus1}
+                     bonus2={bonus2}
+                     bonus3={bonus3}
+                     rarity={cardRarity}
+                  />
                </Accordion.Panel>
             </Accordion.Control>
          </Accordion.Item>

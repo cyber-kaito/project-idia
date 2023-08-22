@@ -20,7 +20,7 @@ export default function Page({ card_data }: { card_data: any[] }) {
          return true;
       });
       setCardsList(filteredCards);
-   });
+   }, [filterValue]);
 
    useEffect(() => {
       setSlicedCardsList(cardsList.slice(0, count));
