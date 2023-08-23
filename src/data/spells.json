@@ -1,0 +1,8 @@
+[
+   { "value": "fire", "label": "Fire", "group": "Element" },
+   { "value": "water", "label": "Water", "group": "Element" },
+   { "value": "flora", "label": "Flora", "group": "Element" },
+   { "value": "cosmic", "label": "Cosmic", "group": "Element" },
+   { "value": "atk", "label": "Attack Magic", "group": "Type" },
+   { "value": "heal", "label": "Healing Magic", "group": "Type" }
+]

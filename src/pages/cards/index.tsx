@@ -5,22 +5,43 @@ import { useState, useEffect } from "react";
 import GalleryCard from "./components/GalleryCard";
 import InfiniteScroll from "react-infinite-scroll-component";
 import CharacterList from "../../data/characters.json";
+import DormList from "../../data/dorms.json";
 
 export default function Page({ card_data }: { card_data: any[] }) {
    const [count, setCount] = useState(24);
    const [cardsList, setCardsList] = useState<any[]>([]);
    const [slicedCardsList, setSlicedCardsList] = useState<any[]>([]);
    const [opened, { toggle }] = useDisclosure(false);
-   const [filterValue, setFilterValue] = useState<any[]>([]);
+   const [characterFilterValue, setCharacterFilterValue] = useState<any[]>([]);
+   const [dormFilterValue, setDormFilterValue] = useState<any[]>([]);
+   const [rarityFilterValue, setRarityFilterValue] = useState<any[]>([]);
 
    useEffect(() => {
       let filteredCards: any[] = card_data.filter((card) => {
-         if (filterValue.length)
-            return filterValue.includes(card.studentname.toString());
+         if (characterFilterValue.length)
+            return characterFilterValue.includes(card.studentname.toString());
          return true;
       });
       setCardsList(filteredCards);
-   }, [filterValue]);
+   }, [characterFilterValue]);
+
+   useEffect(() => {
+      let filteredCards: any[] = card_data.filter((card) => {
+         if (dormFilterValue.length)
+            return dormFilterValue.includes(card.studentdorm.toString());
+         return true;
+      });
+      setCardsList(filteredCards);
+   }, [dormFilterValue]);
+
+   useEffect(() => {
+      let filteredCards: any[] = card_data.filter((card) => {
+         if (rarityFilterValue.length)
+            return rarityFilterValue.includes(card.cardrarity.toString());
+         return true;
+      });
+      setCardsList(filteredCards);
+   }, [rarityFilterValue]);
 
    useEffect(() => {
       setSlicedCardsList(cardsList.slice(0, count));
@@ -46,12 +67,32 @@ export default function Page({ card_data }: { card_data: any[] }) {
             <MultiSelect
                searchable
                clearable
-               value={filterValue}
-               onChange={setFilterValue}
+               value={characterFilterValue}
+               onChange={setCharacterFilterValue}
                className="mb-3 w-2/3 sm:w-1/3"
                data={CharacterList}
                label="Characters"
                placeholder="Pick a character"
+            ></MultiSelect>
+            <MultiSelect
+               searchable
+               clearable
+               value={dormFilterValue}
+               onChange={setDormFilterValue}
+               className="mb-3 w-2/3 sm:w-1/3"
+               data={DormList}
+               label="Dorms"
+               placeholder="Pick a dorm"
+            ></MultiSelect>
+            <MultiSelect
+               searchable
+               clearable
+               value={rarityFilterValue}
+               onChange={setRarityFilterValue}
+               className="mb-3 w-2/3 sm:w-1/3"
+               data={["R", "SR", "SSR"]}
+               label="Rarity"
+               placeholder="Pick a rarity"
             ></MultiSelect>
          </Collapse>
          <InfiniteScroll
