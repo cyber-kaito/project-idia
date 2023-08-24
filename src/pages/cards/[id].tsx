@@ -32,9 +32,12 @@ export default function Page({ card_data }: { card_data: any[] }) {
             cardTitle={card.cardtitle}
             cardType={card.cardtype}
             cardAcquisition={card.acquisition}
-            spell1={card.spell1}
-            spell2={card.spell2}
-            spell3={card.spell3}
+            spell1name={card.spell1name}
+            spell1desc={card.spell1desc}
+            spell2name={card.spell2name}
+            spell2desc={card.spell2desc}
+            spell3name={card.spell3name}
+            spell3desc={card.spell3desc}
             buddy1={card.buddy1}
             buddy2={card.buddy2}
             buddy3={card.buddy3}

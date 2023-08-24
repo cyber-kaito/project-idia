@@ -7,8 +7,10 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import CharacterList from "../../data/characters.json";
 import DormList from "../../data/dorms.json";
 
+const INITIAL_COUNT = 24;
+
 export default function Page({ card_data }: { card_data: any[] }) {
-   const [count, setCount] = useState(24);
+   const [count, setCount] = useState(INITIAL_COUNT);
    const [cardsList, setCardsList] = useState<any[]>([]);
    const [slicedCardsList, setSlicedCardsList] = useState<any[]>([]);
    const [opened, { toggle }] = useDisclosure(false);
@@ -48,7 +50,7 @@ export default function Page({ card_data }: { card_data: any[] }) {
    }, [cardsList, count]);
 
    const loadMore = () => {
-      setCount(count + 24);
+      setCount(count + INITIAL_COUNT);
    };
    return (
       <>

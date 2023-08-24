@@ -1,4 +1,4 @@
-import { Divider, Grid, Accordion } from "@mantine/core";
+import { Divider, Grid, Accordion, Text } from "@mantine/core";
 import { getAssetURL } from "../../../utils";
 
 function BuddyDisplay({
@@ -200,14 +200,20 @@ function SpellElement({ spell }: { spell: string | undefined }) {
 }
 
 function SpellDisplay({
-   spell1,
-   spell2,
-   spell3,
+   spell1name,
+   spell1desc,
+   spell2name,
+   spell2desc,
+   spell3name,
+   spell3desc,
    rarity,
 }: {
-   spell1: string | undefined;
-   spell2: string | undefined;
-   spell3: string | undefined;
+   spell1name: string | undefined;
+   spell1desc: string | undefined;
+   spell2name: string | undefined;
+   spell2desc: string | undefined;
+   spell3name: string | undefined;
+   spell3desc: string | undefined;
    rarity: string | undefined;
 }) {
    if (rarity === "SSR") {
@@ -224,11 +230,14 @@ function SpellDisplay({
                   span={6}
                   className="text-md sm:text-lg text-right my-auto"
                >
-                  {spell1}
+                  {spell1name}
                </Grid.Col>
                <Grid.Col span={2} className="my-auto">
-                  <SpellElement spell={spell1}></SpellElement>
+                  <SpellElement spell={spell1name}></SpellElement>
                </Grid.Col>
+               <Text fz="md" className="mx-2 pb-3">
+                  {spell1desc}
+               </Text>
             </Grid>
             <Divider></Divider>
             <Grid justify="space-between" className="pt-3 pb-2">
@@ -242,11 +251,14 @@ function SpellDisplay({
                   span={6}
                   className="text-md sm:text-lg text-right my-auto"
                >
-                  {spell2}
+                  {spell2name}
                </Grid.Col>
                <Grid.Col span={2}>
-                  <SpellElement spell={spell2}></SpellElement>
+                  <SpellElement spell={spell2name}></SpellElement>
                </Grid.Col>
+               <Text fz="md" className="mx-2 pb-3">
+                  {spell2desc}
+               </Text>
             </Grid>
             <Divider></Divider>
             <Grid justify="space-between" className="pt-3">
@@ -260,11 +272,14 @@ function SpellDisplay({
                   span={6}
                   className="text-md sm:text-lg text-right my-auto"
                >
-                  {spell3}
+                  {spell3name}
                </Grid.Col>
                <Grid.Col span={2}>
-                  <SpellElement spell={spell3}></SpellElement>
+                  <SpellElement spell={spell3name}></SpellElement>
                </Grid.Col>
+               <Text fz="md" className="mx-2">
+                  {spell3desc}
+               </Text>
             </Grid>
          </>
       );
@@ -282,11 +297,14 @@ function SpellDisplay({
                   span={6}
                   className="text-md sm:text-lg text-right my-auto"
                >
-                  {spell1}
+                  {spell1name}
                </Grid.Col>
                <Grid.Col span={2} className="my-auto">
-                  <SpellElement spell={spell1}></SpellElement>
+                  <SpellElement spell={spell1name}></SpellElement>
                </Grid.Col>
+               <Text fz="md" className="mx-2 pb-3">
+                  {spell1desc}
+               </Text>
             </Grid>
             <Divider></Divider>
             <Grid justify="space-between" className="pt-3 pb-2">
@@ -300,11 +318,14 @@ function SpellDisplay({
                   span={6}
                   className="text-md sm:text-lg text-right my-auto"
                >
-                  {spell2}
+                  {spell2name}
                </Grid.Col>
                <Grid.Col span={2}>
-                  <SpellElement spell={spell2}></SpellElement>
+                  <SpellElement spell={spell2name}></SpellElement>
                </Grid.Col>
+               <Text fz="md" className="mx-2">
+                  {spell2desc}
+               </Text>
             </Grid>
          </>
       );
@@ -582,9 +603,12 @@ export default function CardInfo({
    cardTitle,
    cardType,
    cardAcquisition,
-   spell1,
-   spell2,
-   spell3,
+   spell1name,
+   spell1desc,
+   spell2name,
+   spell2desc,
+   spell3name,
+   spell3desc,
    buddy1,
    buddy2,
    buddy3,
@@ -598,9 +622,12 @@ export default function CardInfo({
    cardTitle: string;
    cardType: string;
    cardAcquisition: string;
-   spell1: string;
-   spell2: string;
-   spell3: string;
+   spell1name: string;
+   spell1desc: string;
+   spell2name: string;
+   spell2desc: string;
+   spell3name: string;
+   spell3desc: string;
    buddy1: string;
    buddy2: string;
    buddy3: string;
@@ -753,9 +780,12 @@ export default function CardInfo({
                Spell Information
                <Accordion.Panel>
                   <SpellDisplay
-                     spell1={spell1}
-                     spell2={spell2}
-                     spell3={spell3}
+                     spell1name={spell1name}
+                     spell1desc={spell1desc}
+                     spell2name={spell2name}
+                     spell2desc={spell2desc}
+                     spell3name={spell3name}
+                     spell3desc={spell3desc}
                      rarity={cardRarity}
                   />
                </Accordion.Panel>
