@@ -6,7 +6,7 @@ function CardRarity({ rarity }: { rarity: string | undefined }) {
    if (rarity === "R") {
       return (
          <img
-            src="/r_banner.webp"
+            src={getAssetURL(`images_webp/ui/banners/r_banner.webp`)}
             alt="R banner"
             className="absolute z-10 w-10 -mt-1 ml-1"
             loading="lazy"
@@ -16,7 +16,7 @@ function CardRarity({ rarity }: { rarity: string | undefined }) {
    } else if (rarity === "SR") {
       return (
          <img
-            src="/sr_banner.webp"
+            src={getAssetURL(`images_webp/ui/banners/sr_banner.webp`)}
             alt="SR banner"
             className="absolute z-10 w-10 -mt-1 ml-1"
             loading="lazy"
@@ -26,7 +26,7 @@ function CardRarity({ rarity }: { rarity: string | undefined }) {
    } else {
       return (
          <img
-            src="/ssr_banner.webp"
+            src={getAssetURL(`images_webp/ui/banners/ssr_banner.webp`)}
             alt="SSR banner"
             className="absolute z-10 w-10 -mt-1 ml-1"
             loading="lazy"

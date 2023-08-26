@@ -163,7 +163,7 @@ function SpellElement({ spell }: { spell: string | undefined }) {
    if (spell?.startsWith("Fire") || spell?.startsWith("Flame")) {
       return (
          <img
-            src="/fire.webp"
+            src={getAssetURL(`images_webp/ui/banners/fire.webp`)}
             alt="Fire element banner"
             loading="lazy"
             decoding="async"
@@ -172,7 +172,7 @@ function SpellElement({ spell }: { spell: string | undefined }) {
    } else if (spell?.startsWith("Water") || spell?.startsWith("Aqua")) {
       return (
          <img
-            src="/water.webp"
+            src={getAssetURL(`images_webp/ui/banners/water.webp`)}
             alt="Water element banner"
             loading="lazy"
             decoding="async"
@@ -181,7 +181,7 @@ function SpellElement({ spell }: { spell: string | undefined }) {
    } else if (spell?.startsWith("Leaf") || spell?.startsWith("Forest")) {
       return (
          <img
-            src="/flora.webp"
+            src={getAssetURL(`images_webp/ui/banners/flora.webp`)}
             alt="Flora element banner"
             loading="lazy"
             decoding="async"
@@ -190,7 +190,7 @@ function SpellElement({ spell }: { spell: string | undefined }) {
    } else {
       return (
          <img
-            src="/cosmic.webp"
+            src={getAssetURL(`images_webp/ui/banners/cosmic.webp`)}
             alt="Cosmic element banner"
             loading="lazy"
             decoding="async"
