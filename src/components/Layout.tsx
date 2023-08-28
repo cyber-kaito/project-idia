@@ -46,12 +46,14 @@ export default function Layout({ children }: { children: any }) {
                   </Link>
                </Navbar.Section>
                <Navbar.Section mt="lg" ml="md">
-                  <Link
+                  <a
                      href="https://cyber-kaito.github.io/twst-spine/"
                      className="text-lg"
+                     target="_blank"
+                     rel="noopener noreferrer"
                   >
                      Animations
-                  </Link>
+                  </a>
                </Navbar.Section>
             </Navbar>
          }

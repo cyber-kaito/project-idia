@@ -300,7 +300,7 @@ export default function Page() {
             <Title order={3} className="py-4">
                Welcome to the Villains' World!
             </Title>
-            <Paper radius="xs">
+            <Paper radius="xs" className="p-4">
                <Text>
                   This is a resource website for Twisted Wonderland! Here you
                   can find information and view media from the game, as well as

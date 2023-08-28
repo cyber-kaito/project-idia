@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import GalleryCard from "./components/GalleryCard";
 import InfiniteScroll from "react-infinite-scroll-component";
 import CharacterList from "../../data/characters.json";
-import DormList from "../../data/dorms.json";
+// import DormList from "../../data/dorms.json";
 
 const INITIAL_COUNT = 24;
 
@@ -15,8 +15,8 @@ export default function Page({ card_data }: { card_data: any[] }) {
    const [slicedCardsList, setSlicedCardsList] = useState<any[]>([]);
    const [opened, { toggle }] = useDisclosure(false);
    const [characterFilterValue, setCharacterFilterValue] = useState<any[]>([]);
-   const [dormFilterValue, setDormFilterValue] = useState<any[]>([]);
-   const [rarityFilterValue, setRarityFilterValue] = useState<any[]>([]);
+   // const [dormFilterValue, setDormFilterValue] = useState<any[]>([]);
+   // const [rarityFilterValue, setRarityFilterValue] = useState<any[]>([]);
 
    useEffect(() => {
       let filteredCards: any[] = card_data.filter((card) => {
@@ -27,23 +27,23 @@ export default function Page({ card_data }: { card_data: any[] }) {
       setCardsList(filteredCards);
    }, [characterFilterValue]);
 
-   useEffect(() => {
-      let filteredCards: any[] = card_data.filter((card) => {
-         if (dormFilterValue.length)
-            return dormFilterValue.includes(card.studentdorm.toString());
-         return true;
-      });
-      setCardsList(filteredCards);
-   }, [dormFilterValue]);
+   // useEffect(() => {
+   //    let filteredCards: any[] = card_data.filter((card) => {
+   //       if (dormFilterValue.length)
+   //          return dormFilterValue.includes(card.studentdorm.toString());
+   //       return true;
+   //    });
+   //    setCardsList(filteredCards);
+   // }, [dormFilterValue]);
 
-   useEffect(() => {
-      let filteredCards: any[] = card_data.filter((card) => {
-         if (rarityFilterValue.length)
-            return rarityFilterValue.includes(card.cardrarity.toString());
-         return true;
-      });
-      setCardsList(filteredCards);
-   }, [rarityFilterValue]);
+   // useEffect(() => {
+   //    let filteredCards: any[] = card_data.filter((card) => {
+   //       if (rarityFilterValue.length)
+   //          return rarityFilterValue.includes(card.cardrarity.toString());
+   //       return true;
+   //    });
+   //    setCardsList(filteredCards);
+   // }, [rarityFilterValue]);
 
    useEffect(() => {
       setSlicedCardsList(cardsList.slice(0, count));
@@ -76,7 +76,7 @@ export default function Page({ card_data }: { card_data: any[] }) {
                label="Characters"
                placeholder="Pick a character"
             ></MultiSelect>
-            <MultiSelect
+            {/* <MultiSelect
                searchable
                clearable
                value={dormFilterValue}
@@ -95,7 +95,7 @@ export default function Page({ card_data }: { card_data: any[] }) {
                data={["R", "SR", "SSR"]}
                label="Rarity"
                placeholder="Pick a rarity"
-            ></MultiSelect>
+            ></MultiSelect> */}
          </Collapse>
          <InfiniteScroll
             dataLength={slicedCardsList.length}
