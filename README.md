@@ -1,38 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project Idia
 
-## Getting Started
+A resource website for Twisted Wonderland, created with Next.js and Mantine.
 
-First, run the development server:
+## Important Notes
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Feedback
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+I have made a feedback form for issue/bug reports, suggestions, and comments [here](https://forms.gle/jFzi8xhwLmuFxnVP7).
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### JP Server Content
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+So far, this website only contains content released in the **English** version of the game. I would like to add JP content eventually, but it is not a priority for me at the moment. I apologize if this is an inconvenience. However, I have been updating the super-deformed animation viewer with all the models from the JP version of the game.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Data
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Most of the data on this website is sourced from the [Twisted Wonderland Wiki](https://twistedwonderland.wiki.gg/), with a small portion from the game itself. All card assets were sourced from the game itself. If there are any data or asset inaccuracies, you can send them to me through the feedback form mentioned above.
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+-  Card gallery
+-  View card stats
+-  View super-deformed animations
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Planned Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+-  View information on past and present events and gacha banners
+-  View character profiles
+-  Customize and build card teams
+-  View today's and upcoming alchemy lessons and furniture material rewards

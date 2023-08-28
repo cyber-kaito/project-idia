@@ -74,7 +74,7 @@ export default function CardTabs({
                      " ",
                      cardTitle,
                      " ",
-                     "Normal"
+                     "Outfit"
                   )}
                   loading="lazy"
                   decoding="async"
