@@ -21,6 +21,7 @@ export default function Page() {
                href="https://github.com/cyber-kaito"
                target="_blank"
                rel="noopener noreferrer"
+               className="underline"
             >
                cyberkaito (GitHub)
             </Text>

@@ -63,7 +63,7 @@ export default function Page({ card_data }: { card_data: any[] }) {
             color="gray"
             className="mb-3 w-1/2 sm:w-1/3"
          >
-            Filters
+            Filter
          </Button>
          <Collapse in={opened}>
             <MultiSelect

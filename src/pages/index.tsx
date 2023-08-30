@@ -304,8 +304,8 @@ export default function Page() {
                <Text>
                   This is a resource website for Twisted Wonderland! Here you
                   can find information and view media from the game, as well as
-                  use various tools to help you with your time as a student at
-                  Night Raven College!
+                  use various tools (coming soon) to help you with your time as
+                  a student at Night Raven College!
                </Text>
             </Paper>
             <Center>
