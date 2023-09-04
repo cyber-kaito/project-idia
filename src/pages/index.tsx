@@ -14,47 +14,47 @@ import alchemy_data from "../data/alchemy.json";
 // import gauntlet_data from "../data/gauntlet.json";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
 
-function AlchemyCharacters({ setNumber }: { setNumber: number }) {
-   if (setNumber === 1 || setNumber === 3 || setNumber === 5) {
-      return (
-         <Center>
-            <Grid columns={4}>
-               {alchemy_data.characters[setNumber - 1].characters.map((c) => (
-                  <Grid.Col span={1}>
-                     <img
-                        src={getAssetURL(
-                           `images_webp/ui/alchemy/${c}_alchemy.webp`
-                        )}
-                        alt={c.concat(" ", "alchemy image")}
-                        loading="lazy"
-                        decoding="async"
-                     ></img>
-                  </Grid.Col>
-               ))}
-            </Grid>
-         </Center>
-      );
-   } else {
-      return (
-         <Center>
-            <Grid columns={5}>
-               {alchemy_data.characters[setNumber - 1].characters.map((c) => (
-                  <Grid.Col span={1}>
-                     <img
-                        src={getAssetURL(
-                           `images_webp/ui/alchemy/${c}_alchemy.webp`
-                        )}
-                        alt={c.concat(" ", "alchemy image")}
-                        loading="lazy"
-                        decoding="async"
-                     ></img>
-                  </Grid.Col>
-               ))}
-            </Grid>
-         </Center>
-      );
-   }
-}
+// function AlchemyCharacters({ setNumber }: { setNumber: number }) {
+//    if (setNumber === 1 || setNumber === 3 || setNumber === 5) {
+//       return (
+//          <Center>
+//             <Grid columns={4}>
+//                {alchemy_data.characters[setNumber - 1].characters.map((c) => (
+//                   <Grid.Col span={1}>
+//                      <img
+//                         src={getAssetURL(
+//                            `images_webp/ui/alchemy/${c}_alchemy.webp`
+//                         )}
+//                         alt={c.concat(" ", "alchemy image")}
+//                         loading="lazy"
+//                         decoding="async"
+//                      ></img>
+//                   </Grid.Col>
+//                ))}
+//             </Grid>
+//          </Center>
+//       );
+//    } else {
+//       return (
+//          <Center>
+//             <Grid columns={5}>
+//                {alchemy_data.characters[setNumber - 1].characters.map((c) => (
+//                   <Grid.Col span={1}>
+//                      <img
+//                         src={getAssetURL(
+//                            `images_webp/ui/alchemy/${c}_alchemy.webp`
+//                         )}
+//                         alt={c.concat(" ", "alchemy image")}
+//                         loading="lazy"
+//                         decoding="async"
+//                      ></img>
+//                   </Grid.Col>
+//                ))}
+//             </Grid>
+//          </Center>
+//       );
+//    }
+// }
 
 function AlchemyBooks({ setNumber }: { setNumber: number }) {
    const element = alchemy_data.books[setNumber - 1].element;
@@ -298,7 +298,7 @@ export default function Page() {
             <Title order={1}>Project Idia</Title>
             <Divider></Divider>
             <Title order={3} className="py-4">
-               Welcome to the Villains' World!
+               Welcome to the Villains&apos; World!
             </Title>
             <Paper radius="xs" className="p-4">
                <Text>
