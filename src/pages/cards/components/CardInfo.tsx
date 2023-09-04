@@ -22,10 +22,7 @@ function BuddyDisplay({
       return (
          <>
             <Grid justify="space-between" className="pt-3 pb-2">
-               <Grid.Col
-                  span={2}
-                  className="text-md sm:text-lg text-right my-auto"
-               >
+               <Grid.Col span={2} className="my-auto">
                   <BuddyIcon buddy={buddy1} />
                </Grid.Col>
                <Grid.Col
@@ -43,10 +40,7 @@ function BuddyDisplay({
             </Grid>
             <Divider></Divider>
             <Grid justify="space-between" className="pt-3 pb-2">
-               <Grid.Col
-                  span={2}
-                  className="text-md sm:text-lg text-right my-auto"
-               >
+               <Grid.Col span={2} className="my-auto">
                   <BuddyIcon buddy={buddy2} />
                </Grid.Col>
                <Grid.Col
@@ -64,10 +58,7 @@ function BuddyDisplay({
             </Grid>
             <Divider></Divider>
             <Grid justify="space-between" className="pt-3">
-               <Grid.Col
-                  span={2}
-                  className="text-md sm:text-lg text-right my-auto"
-               >
+               <Grid.Col span={2} className="my-auto">
                   <BuddyIcon buddy={buddy3} />
                </Grid.Col>
                <Grid.Col
@@ -89,10 +80,7 @@ function BuddyDisplay({
       return (
          <>
             <Grid justify="space-between" className="pt-3 pb-2">
-               <Grid.Col
-                  span={2}
-                  className="text-md sm:text-lg text-right my-auto"
-               >
+               <Grid.Col span={2} className="my-auto">
                   <BuddyIcon buddy={buddy1} />
                </Grid.Col>
                <Grid.Col
@@ -110,10 +98,7 @@ function BuddyDisplay({
             </Grid>
             <Divider></Divider>
             <Grid justify="space-between" className="pt-3 pb-2">
-               <Grid.Col
-                  span={2}
-                  className="text-md sm:text-lg text-right my-auto"
-               >
+               <Grid.Col span={2} className="my-auto">
                   <BuddyIcon buddy={buddy2} />
                </Grid.Col>
                <Grid.Col
@@ -135,10 +120,7 @@ function BuddyDisplay({
       return (
          <>
             <Grid justify="space-between" className="pt-3 pb-2">
-               <Grid.Col
-                  span={2}
-                  className="text-md sm:text-lg text-right my-auto"
-               >
+               <Grid.Col span={2} className="my-auto">
                   <BuddyIcon buddy={buddy1} />
                </Grid.Col>
                <Grid.Col
