@@ -10,13 +10,13 @@ function BuddyDisplay({
    bonus3,
    rarity,
 }: {
-   buddy1: string | undefined;
-   buddy2: string | undefined;
-   buddy3: string | undefined;
-   bonus1: string | undefined;
-   bonus2: string | undefined;
-   bonus3: string | undefined;
-   rarity: string | undefined;
+   buddy1: string;
+   buddy2: string;
+   buddy3: string;
+   bonus1: string;
+   bonus2: string;
+   bonus3: string;
+   rarity: string;
 }) {
    if (rarity === "SSR") {
       return (
@@ -141,8 +141,8 @@ function BuddyDisplay({
    }
 }
 
-function SpellElement({ spell }: { spell: string | undefined }) {
-   if (spell?.startsWith("Fire") || spell?.startsWith("Flame")) {
+function SpellElement({ spell }: { spell: string }) {
+   if (spell.startsWith("Fire") || spell.startsWith("Flame")) {
       return (
          <img
             src={getAssetURL(`images_webp/ui/banners/fire.webp`)}
@@ -151,7 +151,7 @@ function SpellElement({ spell }: { spell: string | undefined }) {
             decoding="async"
          ></img>
       );
-   } else if (spell?.startsWith("Water") || spell?.startsWith("Aqua")) {
+   } else if (spell.startsWith("Water") || spell.startsWith("Aqua")) {
       return (
          <img
             src={getAssetURL(`images_webp/ui/banners/water.webp`)}
@@ -160,7 +160,7 @@ function SpellElement({ spell }: { spell: string | undefined }) {
             decoding="async"
          ></img>
       );
-   } else if (spell?.startsWith("Leaf") || spell?.startsWith("Forest")) {
+   } else if (spell.startsWith("Leaf") || spell.startsWith("Forest")) {
       return (
          <img
             src={getAssetURL(`images_webp/ui/banners/flora.webp`)}
@@ -190,13 +190,13 @@ function SpellDisplay({
    spell3desc,
    rarity,
 }: {
-   spell1name: string | undefined;
-   spell1desc: string | undefined;
-   spell2name: string | undefined;
-   spell2desc: string | undefined;
-   spell3name: string | undefined;
-   spell3desc: string | undefined;
-   rarity: string | undefined;
+   spell1name: string;
+   spell1desc: string;
+   spell2name: string;
+   spell2desc: string;
+   spell3name: string;
+   spell3desc: string;
+   rarity: string;
 }) {
    if (rarity === "SSR") {
       return (
@@ -314,8 +314,8 @@ function SpellDisplay({
    }
 }
 
-function BuddyIcon({ buddy }: { buddy: string | undefined }) {
-   if (buddy!.startsWith("Riddle")) {
+function BuddyIcon({ buddy }: { buddy: string }) {
+   if (buddy.startsWith("Riddle")) {
       return (
          <img
             className="w-24"
@@ -327,7 +327,7 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
             decoding="async"
          ></img>
       );
-   } else if (buddy!.startsWith("Ace")) {
+   } else if (buddy.startsWith("Ace")) {
       return (
          <img
             className="w-24"
@@ -337,7 +337,7 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
             decoding="async"
          ></img>
       );
-   } else if (buddy!.startsWith("Deuce")) {
+   } else if (buddy.startsWith("Deuce")) {
       return (
          <img
             className="w-24"
@@ -349,7 +349,7 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
             decoding="async"
          ></img>
       );
-   } else if (buddy!.startsWith("Cater")) {
+   } else if (buddy.startsWith("Cater")) {
       return (
          <img
             className="w-24"
@@ -361,7 +361,7 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
             decoding="async"
          ></img>
       );
-   } else if (buddy!.startsWith("Trey")) {
+   } else if (buddy.startsWith("Trey")) {
       return (
          <img
             className="w-24"
@@ -373,7 +373,7 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
             decoding="async"
          ></img>
       );
-   } else if (buddy!.startsWith("Leona")) {
+   } else if (buddy.startsWith("Leona")) {
       return (
          <img
             className="w-24"
@@ -385,7 +385,7 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
             decoding="async"
          ></img>
       );
-   } else if (buddy!.startsWith("Jack")) {
+   } else if (buddy.startsWith("Jack")) {
       return (
          <img
             className="w-24"
@@ -397,7 +397,7 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
             decoding="async"
          ></img>
       );
-   } else if (buddy!.startsWith("Ruggie")) {
+   } else if (buddy.startsWith("Ruggie")) {
       return (
          <img
             className="w-24"
@@ -409,7 +409,7 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
             decoding="async"
          ></img>
       );
-   } else if (buddy!.startsWith("Azul")) {
+   } else if (buddy.startsWith("Azul")) {
       return (
          <img
             className="w-24"
@@ -421,7 +421,7 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
             decoding="async"
          ></img>
       );
-   } else if (buddy!.startsWith("Jade")) {
+   } else if (buddy.startsWith("Jade")) {
       return (
          <img
             className="w-24"
@@ -433,7 +433,7 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
             decoding="async"
          ></img>
       );
-   } else if (buddy!.startsWith("Floyd")) {
+   } else if (buddy.startsWith("Floyd")) {
       return (
          <img
             className="w-24"
@@ -445,7 +445,7 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
             decoding="async"
          ></img>
       );
-   } else if (buddy!.startsWith("Kalim")) {
+   } else if (buddy.startsWith("Kalim")) {
       return (
          <img
             className="w-24"
@@ -457,7 +457,7 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
             decoding="async"
          ></img>
       );
-   } else if (buddy!.startsWith("Jamil")) {
+   } else if (buddy.startsWith("Jamil")) {
       return (
          <img
             className="w-24"
@@ -469,7 +469,7 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
             decoding="async"
          ></img>
       );
-   } else if (buddy!.startsWith("Vil")) {
+   } else if (buddy.startsWith("Vil")) {
       return (
          <img
             className="w-24"
@@ -479,7 +479,7 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
             decoding="async"
          ></img>
       );
-   } else if (buddy!.startsWith("Epel")) {
+   } else if (buddy.startsWith("Epel")) {
       return (
          <img
             className="w-24"
@@ -491,7 +491,7 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
             decoding="async"
          ></img>
       );
-   } else if (buddy!.startsWith("Rook")) {
+   } else if (buddy.startsWith("Rook")) {
       return (
          <img
             className="w-24"
@@ -503,7 +503,7 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
             decoding="async"
          ></img>
       );
-   } else if (buddy!.startsWith("Idia")) {
+   } else if (buddy.startsWith("Idia")) {
       return (
          <img
             className="w-24"
@@ -515,7 +515,7 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
             decoding="async"
          ></img>
       );
-   } else if (buddy!.startsWith("Ortho")) {
+   } else if (buddy.startsWith("Ortho")) {
       return (
          <img
             className="w-24"
@@ -527,7 +527,7 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
             decoding="async"
          ></img>
       );
-   } else if (buddy!.startsWith("Malleus")) {
+   } else if (buddy.startsWith("Malleus")) {
       return (
          <img
             className="w-24"
@@ -539,7 +539,7 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
             decoding="async"
          ></img>
       );
-   } else if (buddy!.startsWith("Silver")) {
+   } else if (buddy.startsWith("Silver")) {
       return (
          <img
             className="w-24"
@@ -551,7 +551,7 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
             decoding="async"
          ></img>
       );
-   } else if (buddy!.startsWith("Sebek")) {
+   } else if (buddy.startsWith("Sebek")) {
       return (
          <img
             className="w-24"
@@ -563,7 +563,7 @@ function BuddyIcon({ buddy }: { buddy: string | undefined }) {
             decoding="async"
          ></img>
       );
-   } else if (buddy!.startsWith("Lilia")) {
+   } else if (buddy.startsWith("Lilia")) {
       return (
          <img
             className="w-24"
@@ -720,14 +720,7 @@ export default function CardInfo({
                            src={getAssetURL(
                               `images_webp/thumbnails/cards/thumb_${cardID}_normal.webp`
                            )}
-                           alt={studentName.concat(
-                              " ",
-                              cardRarity,
-                              " ",
-                              cardTitle,
-                              " ",
-                              "Normal Thumbnail"
-                           )}
+                           alt={cardTitle}
                            loading="lazy"
                            decoding="async"
                         ></img>
@@ -741,14 +734,7 @@ export default function CardInfo({
                            src={getAssetURL(
                               `images_webp/thumbnails/cards/thumb_${cardID}_groovy.webp`
                            )}
-                           alt={studentName.concat(
-                              " ",
-                              cardRarity,
-                              " ",
-                              cardTitle,
-                              " ",
-                              "Groovy Thumbnail"
-                           )}
+                           alt={cardTitle}
                            loading="lazy"
                            decoding="async"
                         ></img>

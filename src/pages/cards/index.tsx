@@ -25,7 +25,7 @@ export default function Page({ card_data }: { card_data: any[] }) {
          return true;
       });
       setCardsList(filteredCards);
-   }, [characterFilterValue]);
+   }, [characterFilterValue, card_data]);
 
    // useEffect(() => {
    //    let filteredCards: any[] = card_data.filter((card) => {

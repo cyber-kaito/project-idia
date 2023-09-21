@@ -32,14 +32,7 @@ export default function CardTabs({
                   src={getAssetURL(
                      `images_webp/cards/full_${cardID}_normal.webp`
                   )}
-                  alt={studentName.concat(
-                     " ",
-                     cardRarity,
-                     " ",
-                     cardTitle,
-                     " ",
-                     "Normal"
-                  )}
+                  alt={cardTitle}
                   loading="lazy"
                   decoding="async"
                />
@@ -51,14 +44,7 @@ export default function CardTabs({
                   src={getAssetURL(
                      `images_webp/cards/full_${cardID}_groovy.webp`
                   )}
-                  alt={studentName.concat(
-                     " ",
-                     cardRarity,
-                     " ",
-                     cardTitle,
-                     " ",
-                     "Normal"
-                  )}
+                  alt={cardTitle}
                   loading="lazy"
                   decoding="async"
                />
@@ -68,14 +54,7 @@ export default function CardTabs({
                <img
                   className="flex justify-center items-center w-full m-auto sm:w-1/2"
                   src={getAssetURL(`images_webp/outfits/outfit_${cardID}.webp`)}
-                  alt={studentName.concat(
-                     " ",
-                     cardRarity,
-                     " ",
-                     cardTitle,
-                     " ",
-                     "Outfit"
-                  )}
+                  alt={cardTitle}
                   loading="lazy"
                   decoding="async"
                />

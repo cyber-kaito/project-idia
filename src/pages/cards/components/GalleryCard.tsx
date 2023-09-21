@@ -63,14 +63,7 @@ export default function GalleryCard({
                      src={getAssetURL(
                         `images_webp/cards/full_${cardID}_normal.webp`
                      )}
-                     alt={studentName.concat(
-                        " ",
-                        cardRarity,
-                        " ",
-                        cardTitle,
-                        " ",
-                        "Normal"
-                     )}
+                     alt={cardTitle}
                      className="rounded-tl-[3px] w-1/2"
                      loading="lazy"
                      decoding="async"
@@ -79,14 +72,7 @@ export default function GalleryCard({
                      src={getAssetURL(
                         `images_webp/cards/full_${cardID}_groovy.webp`
                      )}
-                     alt={studentName.concat(
-                        " ",
-                        cardRarity,
-                        " ",
-                        cardTitle,
-                        " ",
-                        "Groovy"
-                     )}
+                     alt={cardTitle}
                      className="rounded-tr-[3px] w-1/2"
                      loading="lazy"
                      decoding="async"
