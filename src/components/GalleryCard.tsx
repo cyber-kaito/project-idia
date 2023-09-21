@@ -1,5 +1,5 @@
 import { Paper } from "@mantine/core";
-import { getAssetURL } from "../../../utils";
+import { getAssetURL } from "../utils";
 import Link from "next/link";
 
 function CardRarity({ rarity }: { rarity: string | undefined }) {

@@ -2,7 +2,7 @@ import { Collapse, Button, MultiSelect, Center, Loader } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { getDataURL } from "../../utils";
 import { useState, useEffect } from "react";
-import GalleryCard from "./components/GalleryCard";
+import GalleryCard from "../../components/GalleryCard";
 import InfiniteScroll from "react-infinite-scroll-component";
 import CharacterList from "../../data/characters.json";
 // import DormList from "../../data/dorms.json";
@@ -130,6 +130,5 @@ export async function getStaticProps() {
       props: {
          card_data,
       },
-      revalidate: 10,
    };
 }

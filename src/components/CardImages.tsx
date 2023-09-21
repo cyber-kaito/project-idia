@@ -1,5 +1,5 @@
 import { Tabs } from "@mantine/core";
-import { getAssetURL } from "../../../utils";
+import { getAssetURL } from "../utils";
 
 export default function CardTabs({
    cardID,

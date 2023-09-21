@@ -1,6 +1,6 @@
-import CardImages from "./components/CardImages";
-import CardStats from "./components/CardStats";
-import CardInfo from "./components/CardInfo";
+import CardImages from "../../components/CardImages";
+import CardStats from "../../components/CardStats";
+import CardInfo from "../../components/CardInfo";
 import { useRouter } from "next/router";
 import { getDataURL } from "../../utils";
 
