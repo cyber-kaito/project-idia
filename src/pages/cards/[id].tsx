@@ -1,13 +1,10 @@
 import CardImages from "../../components/CardImages";
 import CardStats from "../../components/CardStats";
 import CardInfo from "../../components/CardInfo";
-import { useRouter } from "next/router";
 import { getDataURL } from "../../utils";
+import { GetStaticPaths, GetStaticProps } from "next";
 
-export default function Page({ card_data }: { card_data: any[] }) {
-   const router = useRouter();
-   const { id } = router.query;
-   const card = card_data.find((item) => item.cardid.toString() === id);
+export default function Page({ card }: { card: any }) {
    return (
       <>
          <h1 className="text-xl sm:text-2xl font-bold pt-1 pb-6">
@@ -49,21 +46,24 @@ export default function Page({ card_data }: { card_data: any[] }) {
    );
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths = (async () => {
    const res = await fetch(getDataURL(`cards.json`));
    const card_data = await res.json();
-   const paths = card_data.map((item: { cardid: any }) => ({
-      params: { id: item.cardid.toString() },
+   const paths = card_data.map((card: { cardid: any }) => ({
+      params: { id: card.cardid.toString() },
    }));
    return { paths, fallback: "blocking" };
-}
+}) satisfies GetStaticPaths;
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async (context) => {
    const res = await fetch(getDataURL(`cards.json`));
-   const card_data = await res.json();
+   const data = await res.json();
+   const card = data.find(
+      (card: any) => card.cardid.toString() === context.params?.id
+   );
    return {
       props: {
-         card_data,
+         card,
       },
    };
-}
+};

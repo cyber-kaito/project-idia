@@ -125,7 +125,16 @@ export default function Page({ card_data }: { card_data: any[] }) {
 
 export async function getStaticProps() {
    const res = await fetch(getDataURL(`cards.json`));
-   const card_data = await res.json();
+   const data = await res.json();
+   let card_data: any[] = [];
+   data.forEach((card: any) => {
+      card_data.push({
+         cardid: card.cardid,
+         cardrarity: card.cardrarity,
+         studentname: card.studentname,
+         cardtitle: card.cardtitle,
+      });
+   });
    return {
       props: {
          card_data,
