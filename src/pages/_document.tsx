@@ -1,5 +1,3 @@
-// this controls the initial response from the server
-
 import { createGetInitialProps } from "@mantine/next";
 import Document, { Head, Html, Main, NextScript } from "next/document";
 

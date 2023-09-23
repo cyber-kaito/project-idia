@@ -1,16 +1,6 @@
 import { Grid, Divider, Tabs } from "@mantine/core";
 
-export default function CardStats({
-   minhp,
-   minpow,
-   maxhp,
-   maxpow,
-}: {
-   minhp: number;
-   minpow: number;
-   maxhp: number;
-   maxpow: number;
-}) {
+export default function CardStats({ card }: { card: GameCard }) {
    return (
       <div className="w-full pt-3 sm:w-5/6">
          <Tabs color="dark" variant="outline" defaultValue="min">
@@ -24,7 +14,7 @@ export default function CardStats({
                      HP
                   </Grid.Col>
                   <Grid.Col span={6} className="text-md sm:text-lg text-right">
-                     {minhp}
+                     {card.minHP}
                   </Grid.Col>
                </Grid>
                <Divider></Divider>
@@ -33,7 +23,7 @@ export default function CardStats({
                      POW
                   </Grid.Col>
                   <Grid.Col span={6} className="text-md sm:text-lg text-right">
-                     {minpow}
+                     {card.minPOW}
                   </Grid.Col>
                </Grid>
             </Tabs.Panel>
@@ -43,7 +33,7 @@ export default function CardStats({
                      HP
                   </Grid.Col>
                   <Grid.Col span={6} className="text-md sm:text-lg text-right">
-                     {maxhp}
+                     {card.maxHP}
                   </Grid.Col>
                </Grid>
                <Divider></Divider>
@@ -52,7 +42,7 @@ export default function CardStats({
                      POW
                   </Grid.Col>
                   <Grid.Col span={6} className="text-md sm:text-lg text-right">
-                     {maxpow}
+                     {card.maxPOW}
                   </Grid.Col>
                </Grid>
             </Tabs.Panel>

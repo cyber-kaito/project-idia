@@ -1,117 +1,101 @@
 import { Divider, Grid, Accordion, Text } from "@mantine/core";
 import { getAssetURL } from "../utils";
 
-function BuddyDisplay({
-   buddy1,
-   buddy2,
-   buddy3,
-   bonus1,
-   bonus2,
-   bonus3,
-   rarity,
-}: {
-   buddy1: string;
-   buddy2: string;
-   buddy3: string;
-   bonus1: string;
-   bonus2: string;
-   bonus3: string;
-   rarity: string;
-}) {
-   if (rarity === "SSR") {
+function BuddyDisplay({ card }: { card: GameCard }) {
+   if (card.rarity === "SSR") {
       return (
          <>
             <Grid justify="space-between" className="pt-3 pb-2">
                <Grid.Col span={2} className="my-auto">
-                  <BuddyIcon buddy={buddy1} />
+                  <BuddyIcon buddy={card.buddy1} />
                </Grid.Col>
                <Grid.Col
                   span={5}
                   className="text-md sm:text-lg font-bold my-auto"
                >
-                  {buddy1}
+                  {card.buddy1}
                </Grid.Col>
                <Grid.Col
                   span={5}
                   className="text-md sm:text-lg text-right my-auto"
                >
-                  {bonus1}
+                  {card.bonus1}
                </Grid.Col>
             </Grid>
             <Divider></Divider>
             <Grid justify="space-between" className="pt-3 pb-2">
                <Grid.Col span={2} className="my-auto">
-                  <BuddyIcon buddy={buddy2} />
+                  <BuddyIcon buddy={card.buddy2} />
                </Grid.Col>
                <Grid.Col
                   span={5}
                   className="text-md sm:text-lg font-bold my-auto"
                >
-                  {buddy2}
+                  {card.buddy2}
                </Grid.Col>
                <Grid.Col
                   span={5}
                   className="text-md sm:text-lg text-right my-auto"
                >
-                  {bonus2}
+                  {card.bonus2}
                </Grid.Col>
             </Grid>
             <Divider></Divider>
             <Grid justify="space-between" className="pt-3">
                <Grid.Col span={2} className="my-auto">
-                  <BuddyIcon buddy={buddy3} />
+                  <BuddyIcon buddy={card.buddy3} />
                </Grid.Col>
                <Grid.Col
                   span={5}
                   className="text-md sm:text-lg font-bold my-auto"
                >
-                  {buddy3}
+                  {card.buddy3}
                </Grid.Col>
                <Grid.Col
                   span={5}
                   className="text-md sm:text-lg text-right my-auto"
                >
-                  {bonus3}
+                  {card.bonus3}
                </Grid.Col>
             </Grid>
          </>
       );
-   } else if (rarity === "SR") {
+   } else if (card.rarity === "SR") {
       return (
          <>
             <Grid justify="space-between" className="pt-3 pb-2">
                <Grid.Col span={2} className="my-auto">
-                  <BuddyIcon buddy={buddy1} />
+                  <BuddyIcon buddy={card.buddy1} />
                </Grid.Col>
                <Grid.Col
                   span={5}
                   className="text-md sm:text-lg font-bold my-auto"
                >
-                  {buddy1}
+                  {card.buddy1}
                </Grid.Col>
                <Grid.Col
                   span={5}
                   className="text-md sm:text-lg text-right my-auto"
                >
-                  {bonus1}
+                  {card.bonus1}
                </Grid.Col>
             </Grid>
             <Divider></Divider>
             <Grid justify="space-between" className="pt-3 pb-2">
                <Grid.Col span={2} className="my-auto">
-                  <BuddyIcon buddy={buddy2} />
+                  <BuddyIcon buddy={card.buddy2} />
                </Grid.Col>
                <Grid.Col
                   span={5}
                   className="text-md sm:text-lg font-bold my-auto"
                >
-                  {buddy2}
+                  {card.buddy2}
                </Grid.Col>
                <Grid.Col
                   span={5}
                   className="text-md sm:text-lg text-right my-auto"
                >
-                  {bonus2}
+                  {card.bonus2}
                </Grid.Col>
             </Grid>
          </>
@@ -121,19 +105,19 @@ function BuddyDisplay({
          <>
             <Grid justify="space-between" className="pt-3 pb-2">
                <Grid.Col span={2} className="my-auto">
-                  <BuddyIcon buddy={buddy1} />
+                  <BuddyIcon buddy={card.buddy1} />
                </Grid.Col>
                <Grid.Col
                   span={5}
                   className="text-md sm:text-lg font-bold my-auto"
                >
-                  {buddy1}
+                  {card.buddy1}
                </Grid.Col>
                <Grid.Col
                   span={5}
                   className="text-md sm:text-lg text-right my-auto"
                >
-                  {bonus1}
+                  {card.bonus1}
                </Grid.Col>
             </Grid>
          </>
@@ -181,24 +165,8 @@ function SpellElement({ spell }: { spell: string }) {
    }
 }
 
-function SpellDisplay({
-   spell1name,
-   spell1desc,
-   spell2name,
-   spell2desc,
-   spell3name,
-   spell3desc,
-   rarity,
-}: {
-   spell1name: string;
-   spell1desc: string;
-   spell2name: string;
-   spell2desc: string;
-   spell3name: string;
-   spell3desc: string;
-   rarity: string;
-}) {
-   if (rarity === "SSR") {
+function SpellDisplay({ card }: { card: GameCard }) {
+   if (card.rarity === "SSR") {
       return (
          <>
             <Grid justify="space-between" className="pt-3 pb-2">
@@ -212,13 +180,13 @@ function SpellDisplay({
                   span={6}
                   className="text-md sm:text-lg text-right my-auto"
                >
-                  {spell1name}
+                  {card.spell1Name}
                </Grid.Col>
                <Grid.Col span={2} className="my-auto">
-                  <SpellElement spell={spell1name}></SpellElement>
+                  <SpellElement spell={card.spell1Name}></SpellElement>
                </Grid.Col>
                <Text fz="md" className="mx-2 pb-3">
-                  {spell1desc}
+                  {card.spell1Desc}
                </Text>
             </Grid>
             <Divider></Divider>
@@ -233,13 +201,13 @@ function SpellDisplay({
                   span={6}
                   className="text-md sm:text-lg text-right my-auto"
                >
-                  {spell2name}
+                  {card.spell2Name}
                </Grid.Col>
                <Grid.Col span={2}>
-                  <SpellElement spell={spell2name}></SpellElement>
+                  <SpellElement spell={card.spell2Name}></SpellElement>
                </Grid.Col>
                <Text fz="md" className="mx-2 pb-3">
-                  {spell2desc}
+                  {card.spell2Desc}
                </Text>
             </Grid>
             <Divider></Divider>
@@ -254,13 +222,13 @@ function SpellDisplay({
                   span={6}
                   className="text-md sm:text-lg text-right my-auto"
                >
-                  {spell3name}
+                  {card.spell3Name}
                </Grid.Col>
                <Grid.Col span={2}>
-                  <SpellElement spell={spell3name}></SpellElement>
+                  <SpellElement spell={card.spell3Name}></SpellElement>
                </Grid.Col>
                <Text fz="md" className="mx-2">
-                  {spell3desc}
+                  {card.spell3Desc}
                </Text>
             </Grid>
          </>
@@ -279,13 +247,13 @@ function SpellDisplay({
                   span={6}
                   className="text-md sm:text-lg text-right my-auto"
                >
-                  {spell1name}
+                  {card.spell1Name}
                </Grid.Col>
                <Grid.Col span={2} className="my-auto">
-                  <SpellElement spell={spell1name}></SpellElement>
+                  <SpellElement spell={card.spell1Name}></SpellElement>
                </Grid.Col>
                <Text fz="md" className="mx-2 pb-3">
-                  {spell1desc}
+                  {card.spell1Desc}
                </Text>
             </Grid>
             <Divider></Divider>
@@ -300,13 +268,13 @@ function SpellDisplay({
                   span={6}
                   className="text-md sm:text-lg text-right my-auto"
                >
-                  {spell2name}
+                  {card.spell2Name}
                </Grid.Col>
                <Grid.Col span={2}>
-                  <SpellElement spell={spell2name}></SpellElement>
+                  <SpellElement spell={card.spell2Name}></SpellElement>
                </Grid.Col>
                <Text fz="md" className="mx-2">
-                  {spell2desc}
+                  {card.spell2Desc}
                </Text>
             </Grid>
          </>
@@ -578,45 +546,7 @@ function BuddyIcon({ buddy }: { buddy: string }) {
    }
 }
 
-export default function CardInfo({
-   cardID,
-   cardRarity,
-   studentName,
-   cardTitle,
-   cardType,
-   cardAcquisition,
-   spell1name,
-   spell1desc,
-   spell2name,
-   spell2desc,
-   spell3name,
-   spell3desc,
-   buddy1,
-   buddy2,
-   buddy3,
-   bonus1,
-   bonus2,
-   bonus3,
-}: {
-   cardID: number;
-   cardRarity: string;
-   studentName: string;
-   cardTitle: string;
-   cardType: string;
-   cardAcquisition: string;
-   spell1name: string;
-   spell1desc: string;
-   spell2name: string;
-   spell2desc: string;
-   spell3name: string;
-   spell3desc: string;
-   buddy1: string;
-   buddy2: string;
-   buddy3: string;
-   bonus1: string;
-   bonus2: string;
-   bonus3: string;
-}) {
+export default function CardInfo({ card }: { card: GameCard }) {
    return (
       <Accordion
          variant="default"
@@ -640,7 +570,7 @@ export default function CardInfo({
                         span={6}
                         className="text-md sm:text-lg text-right my-auto"
                      >
-                        {studentName}
+                        {card.name}
                      </Grid.Col>
                   </Grid>
                   <Divider></Divider>
@@ -655,7 +585,7 @@ export default function CardInfo({
                         span={6}
                         className="text-md sm:text-lg text-right my-auto"
                      >
-                        {cardTitle}
+                        {card.title}
                      </Grid.Col>
                   </Grid>
                   <Divider></Divider>
@@ -670,7 +600,7 @@ export default function CardInfo({
                         span={6}
                         className="text-md sm:text-lg text-right my-auto"
                      >
-                        {cardRarity}
+                        {card.rarity}
                      </Grid.Col>
                   </Grid>
                   <Divider></Divider>
@@ -685,7 +615,7 @@ export default function CardInfo({
                         span={6}
                         className="text-md sm:text-lg text-right my-auto"
                      >
-                        {cardType}
+                        {card.type}
                      </Grid.Col>
                   </Grid>
                   <Divider></Divider>
@@ -700,7 +630,7 @@ export default function CardInfo({
                         span={6}
                         className="text-md sm:text-lg text-right my-auto"
                      >
-                        {cardAcquisition}
+                        {card.acquisition}
                      </Grid.Col>
                   </Grid>
                   <Divider></Divider>
@@ -718,9 +648,9 @@ export default function CardInfo({
                         <img
                            className="w-24"
                            src={getAssetURL(
-                              `images_webp/thumbnails/cards/thumb_${cardID}_normal.webp`
+                              `images_webp/thumbnails/cards/thumb_${card.cardID}_normal.webp`
                            )}
-                           alt={cardTitle}
+                           alt={card.title}
                            loading="lazy"
                            decoding="async"
                         ></img>
@@ -732,9 +662,9 @@ export default function CardInfo({
                         <img
                            className="w-24"
                            src={getAssetURL(
-                              `images_webp/thumbnails/cards/thumb_${cardID}_groovy.webp`
+                              `images_webp/thumbnails/cards/thumb_${card.cardID}_groovy.webp`
                            )}
-                           alt={cardTitle}
+                           alt={card.title}
                            loading="lazy"
                            decoding="async"
                         ></img>
@@ -747,15 +677,7 @@ export default function CardInfo({
             <Accordion.Control className="text-lg">
                Spell Information
                <Accordion.Panel>
-                  <SpellDisplay
-                     spell1name={spell1name}
-                     spell1desc={spell1desc}
-                     spell2name={spell2name}
-                     spell2desc={spell2desc}
-                     spell3name={spell3name}
-                     spell3desc={spell3desc}
-                     rarity={cardRarity}
-                  />
+                  <SpellDisplay card={card} />
                </Accordion.Panel>
             </Accordion.Control>
          </Accordion.Item>
@@ -763,15 +685,7 @@ export default function CardInfo({
             <Accordion.Control className="text-lg">
                Buddy Bonus
                <Accordion.Panel>
-                  <BuddyDisplay
-                     buddy1={buddy1}
-                     buddy2={buddy2}
-                     buddy3={buddy3}
-                     bonus1={bonus1}
-                     bonus2={bonus2}
-                     bonus3={bonus3}
-                     rarity={cardRarity}
-                  />
+                  <BuddyDisplay card={card} />
                </Accordion.Panel>
             </Accordion.Control>
          </Accordion.Item>

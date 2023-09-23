@@ -9,7 +9,6 @@ import {
    Burger,
    useMantineTheme,
 } from "@mantine/core";
-// import { Home, Cards } from "tabler-icons-react";
 
 export default function Layout({ children }: { children: any }) {
    const theme = useMantineTheme();

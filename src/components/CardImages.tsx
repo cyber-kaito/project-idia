@@ -1,17 +1,7 @@
 import { Tabs } from "@mantine/core";
 import { getAssetURL } from "../utils";
 
-export default function CardTabs({
-   cardID,
-   cardRarity,
-   studentName,
-   cardTitle,
-}: {
-   cardID: number;
-   cardRarity: string;
-   studentName: string;
-   cardTitle: string;
-}) {
+export default function CardTabs({ card }: { card: GameCard }) {
    return (
       <div className="flex w-full sm:w-5/6">
          <Tabs
@@ -30,9 +20,9 @@ export default function CardTabs({
                <img
                   className="flex justify-center items-center w-full"
                   src={getAssetURL(
-                     `images_webp/cards/full_${cardID}_normal.webp`
+                     `images_webp/cards/full_${card.cardID}_normal.webp`
                   )}
-                  alt={cardTitle}
+                  alt={card.title}
                   loading="lazy"
                   decoding="async"
                />
@@ -42,9 +32,9 @@ export default function CardTabs({
                <img
                   className="flex justify-center items-center w-full"
                   src={getAssetURL(
-                     `images_webp/cards/full_${cardID}_groovy.webp`
+                     `images_webp/cards/full_${card.cardID}_groovy.webp`
                   )}
-                  alt={cardTitle}
+                  alt={card.title}
                   loading="lazy"
                   decoding="async"
                />
@@ -53,8 +43,10 @@ export default function CardTabs({
             <Tabs.Panel value="outfit" pt="xs">
                <img
                   className="flex justify-center items-center w-full m-auto sm:w-1/2"
-                  src={getAssetURL(`images_webp/outfits/outfit_${cardID}.webp`)}
-                  alt={cardTitle}
+                  src={getAssetURL(
+                     `images_webp/outfits/outfit_${card.cardID}.webp`
+                  )}
+                  alt={card.title}
                   loading="lazy"
                   decoding="async"
                />

@@ -9,26 +9,30 @@ import CharacterList from "../../data/characters.json";
 
 const INITIAL_COUNT = 24;
 
-export default function Page({ card_data }: { card_data: any[] }) {
+export default function Page({ cardData }: { cardData: GameCardStripped[] }) {
    const [count, setCount] = useState(INITIAL_COUNT);
-   const [cardsList, setCardsList] = useState<any[]>([]);
-   const [slicedCardsList, setSlicedCardsList] = useState<any[]>([]);
+   const [cardsList, setCardsList] = useState<GameCardStripped[]>([]);
+   const [slicedCardsList, setSlicedCardsList] = useState<GameCardStripped[]>(
+      []
+   );
    const [opened, { toggle }] = useDisclosure(false);
-   const [characterFilterValue, setCharacterFilterValue] = useState<any[]>([]);
+   const [characterFilterValue, setCharacterFilterValue] = useState<string[]>(
+      []
+   );
    // const [dormFilterValue, setDormFilterValue] = useState<any[]>([]);
    // const [rarityFilterValue, setRarityFilterValue] = useState<any[]>([]);
 
    useEffect(() => {
-      let filteredCards: any[] = card_data.filter((card) => {
+      let filteredCards: GameCardStripped[] = cardData.filter((card) => {
          if (characterFilterValue.length)
-            return characterFilterValue.includes(card.studentname.toString());
+            return characterFilterValue.includes(card.name.toString());
          return true;
       });
       setCardsList(filteredCards);
-   }, [characterFilterValue, card_data]);
+   }, [characterFilterValue, cardData]);
 
    // useEffect(() => {
-   //    let filteredCards: any[] = card_data.filter((card) => {
+   //    let filteredCards: any[] = cardData.filter((card) => {
    //       if (dormFilterValue.length)
    //          return dormFilterValue.includes(card.studentdorm.toString());
    //       return true;
@@ -37,7 +41,7 @@ export default function Page({ card_data }: { card_data: any[] }) {
    // }, [dormFilterValue]);
 
    // useEffect(() => {
-   //    let filteredCards: any[] = card_data.filter((card) => {
+   //    let filteredCards: any[] = cardData.filter((card) => {
    //       if (rarityFilterValue.length)
    //          return rarityFilterValue.includes(card.cardrarity.toString());
    //       return true;
@@ -109,13 +113,7 @@ export default function Page({ card_data }: { card_data: any[] }) {
          >
             <div className="flex flex-col sm:grid sm:gap-x-4 sm:grid-cols-2 lg:grid-cols-3">
                {slicedCardsList?.map((card) => (
-                  <GalleryCard
-                     key={card.cardid}
-                     cardID={card.cardid}
-                     cardRarity={card.cardrarity}
-                     studentName={card.studentname}
-                     cardTitle={card.cardtitle}
-                  />
+                  <GalleryCard key={card.cardID} card={card} />
                ))}
             </div>
          </InfiniteScroll>
@@ -126,18 +124,18 @@ export default function Page({ card_data }: { card_data: any[] }) {
 export async function getStaticProps() {
    const res = await fetch(getDataURL(`cards.json`));
    const data = await res.json();
-   let card_data: any[] = [];
+   let cardData: GameCardStripped[] = [];
    data.forEach((card: any) => {
-      card_data.push({
-         cardid: card.cardid,
-         cardrarity: card.cardrarity,
-         studentname: card.studentname,
-         cardtitle: card.cardtitle,
+      cardData.push({
+         cardID: card.cardid,
+         rarity: card.cardrarity,
+         name: card.studentname,
+         title: card.cardtitle,
       });
    });
    return {
       props: {
-         card_data,
+         cardData,
       },
    };
 }

@@ -4,44 +4,15 @@ import CardInfo from "../../components/CardInfo";
 import { getDataURL } from "../../utils";
 import { GetStaticPaths, GetStaticProps } from "next";
 
-export default function Page({ card }: { card: any }) {
+export default function Page({ card }: { card: GameCard }) {
    return (
       <>
          <h1 className="text-xl sm:text-2xl font-bold pt-1 pb-6">
-            {card?.cardtitle.concat(" (", card.studentname, ")")}
+            {card.title.concat(" (", card.name, ")")}
          </h1>
-         <CardImages
-            cardID={card.cardid}
-            cardRarity={card.cardrarity}
-            studentName={card.studentname}
-            cardTitle={card.cardtitle}
-         />
-         <CardStats
-            minhp={card.minhp}
-            minpow={card.minpow}
-            maxhp={card.maxhp}
-            maxpow={card.maxpow}
-         />
-         <CardInfo
-            cardID={card.cardid}
-            cardRarity={card.cardrarity}
-            studentName={card.studentname}
-            cardTitle={card.cardtitle}
-            cardType={card.cardtype}
-            cardAcquisition={card.acquisition}
-            spell1name={card.spell1name}
-            spell1desc={card.spell1desc}
-            spell2name={card.spell2name}
-            spell2desc={card.spell2desc}
-            spell3name={card.spell3name}
-            spell3desc={card.spell3desc}
-            buddy1={card.buddy1}
-            buddy2={card.buddy2}
-            buddy3={card.buddy3}
-            bonus1={card.bonus1}
-            bonus2={card.bonus2}
-            bonus3={card.bonus3}
-         />
+         <CardImages card={card} />
+         <CardStats card={card} />
+         <CardInfo card={card} />
       </>
    );
 }
@@ -58,9 +29,45 @@ export const getStaticPaths = (async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
    const res = await fetch(getDataURL(`cards.json`));
    const data = await res.json();
-   const card = data.find(
+   const cardObj = data.find(
       (card: any) => card.cardid.toString() === context.params?.id
    );
+   const card: GameCard = {
+      cardID: cardObj.cardid,
+      name: cardObj.studentname,
+      title: cardObj.cardtitle,
+      rarity: cardObj.cardrarity,
+      internalCardID: cardObj.internalid,
+      jpOnly: cardObj.jponly,
+      dorm: cardObj.studentdorm,
+      type: cardObj.cardtype,
+      minHP: cardObj.minhp,
+      maxHP: cardObj.maxhp,
+      minPOW: cardObj.minpow,
+      maxPOW: cardObj.maxpow,
+      spell1Name: cardObj.spell1name,
+      spell2Name: cardObj.spell2name,
+      spell3Name: cardObj.spell3name,
+      spell1Type: cardObj.spell1type,
+      spell2Type: cardObj.spell2type,
+      spell3Type: cardObj.spell3type,
+      spell1Desc: cardObj.spell1desc,
+      spell2Desc: cardObj.spell2desc,
+      spell3Desc: cardObj.spell3desc,
+      spell1Effect1: cardObj.spell1effect1,
+      spell1Effect2: cardObj.spell1effect2,
+      spell2Effect: cardObj.spell2effect,
+      spell3Effect1: cardObj.spell3effect1,
+      spell3Effect2: cardObj.spell3effect2,
+      buddy1: cardObj.buddy1,
+      buddy2: cardObj.buddy2,
+      buddy3: cardObj.buddy3,
+      bonus1: cardObj.bonus1,
+      bonus2: cardObj.bonus2,
+      bonus3: cardObj.bonus3,
+      duoPartner: cardObj.duopartner,
+      acquisition: cardObj.acquisition,
+   };
    return {
       props: {
          card,

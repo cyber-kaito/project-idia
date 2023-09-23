@@ -2,7 +2,7 @@ import { Paper } from "@mantine/core";
 import { getAssetURL } from "../utils";
 import Link from "next/link";
 
-function CardRarity({ rarity }: { rarity: string | undefined }) {
+function CardRarity({ rarity }: { rarity: string }) {
    if (rarity === "R") {
       return (
          <img
@@ -36,50 +36,41 @@ function CardRarity({ rarity }: { rarity: string | undefined }) {
    }
 }
 
-export default function GalleryCard({
-   cardID,
-   cardRarity,
-   studentName,
-   cardTitle,
-}: {
-   cardID: number;
-   cardRarity: string;
-   studentName: string;
-   cardTitle: string;
-}) {
+export default function GalleryCard({ card }: { card: GameCardStripped }) {
+   const id = card.cardID.toString();
    return (
       <div className="flex justify-center relative">
          <Link
             href={{
-               pathname: `/cards/${encodeURIComponent(cardID)}`,
-               query: { cardID },
+               pathname: `/cards/${encodeURIComponent(card.cardID)}`,
+               query: { id },
             }}
-            as={`/cards/${encodeURIComponent(cardID)}`}
+            as={`/cards/${encodeURIComponent(card.cardID)}`}
          >
             <Paper className="my-3 w-full" withBorder>
-               <CardRarity rarity={cardRarity}></CardRarity>
+               <CardRarity rarity={card.rarity}></CardRarity>
                <div className="flex flex-row items-center justify-center">
                   <img
                      src={getAssetURL(
-                        `images_webp/cards/full_${cardID}_normal.webp`
+                        `images_webp/cards/full_${card.cardID}_normal.webp`
                      )}
-                     alt={cardTitle}
+                     alt={card.title}
                      className="rounded-tl-[3px] w-1/2"
                      loading="lazy"
                      decoding="async"
                   />
                   <img
                      src={getAssetURL(
-                        `images_webp/cards/full_${cardID}_groovy.webp`
+                        `images_webp/cards/full_${card.cardID}_groovy.webp`
                      )}
-                     alt={cardTitle}
+                     alt={card.title}
                      className="rounded-tr-[3px] w-1/2"
                      loading="lazy"
                      decoding="async"
                   />
                </div>
-               <h2 className="pl-4 pt-3 text-xl">{cardTitle}</h2>
-               <h4 className="pl-4 pb-3 text-md">{studentName}</h4>
+               <h2 className="pl-4 pt-3 text-xl">{card.title}</h2>
+               <h4 className="pl-4 pb-3 text-md">{card.name}</h4>
             </Paper>
          </Link>
       </div>
