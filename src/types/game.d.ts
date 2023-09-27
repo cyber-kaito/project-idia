@@ -8,10 +8,10 @@ interface GameCardStripped {
    name: gameText;
    title: gameText;
    rarity: gameText;
+   internalCardID: id;
 }
 
 interface GameCard extends GameCardStripped {
-   internalCardID: id;
    jpOnly: jpOnly;
    dorm: gameText;
    type: gameText;

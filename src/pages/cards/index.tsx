@@ -1,15 +1,39 @@
-import { Collapse, Button, MultiSelect, Center, Loader } from "@mantine/core";
+import {
+   Collapse,
+   Button,
+   MultiSelect,
+   Center,
+   Loader,
+   Select,
+   ActionIcon,
+} from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { getDataURL } from "../../utils";
 import { useState, useEffect } from "react";
 import GalleryCard from "../../components/GalleryCard";
 import InfiniteScroll from "react-infinite-scroll-component";
 import CharacterList from "../../data/characters.json";
-// import DormList from "../../data/dorms.json";
+import { ArrowsSort } from "tabler-icons-react";
 
 const INITIAL_COUNT = 24;
 
 export default function Page({ cardData }: { cardData: GameCardStripped[] }) {
+   const toggleSortDirection = () => {
+      if (isAscending) {
+         setIsAscending(false);
+      } else {
+         setIsAscending(true);
+      }
+   };
+
+   const toggleSortOption = (option: string) => {
+      if (option === "Card ID") {
+         setSortOption("Card ID");
+      } else if (option === "Character") {
+         setSortOption("Character");
+      }
+   };
+
    const [count, setCount] = useState(INITIAL_COUNT);
    const [cardsList, setCardsList] = useState<GameCardStripped[]>([]);
    const [slicedCardsList, setSlicedCardsList] = useState<GameCardStripped[]>(
@@ -19,8 +43,8 @@ export default function Page({ cardData }: { cardData: GameCardStripped[] }) {
    const [characterFilterValue, setCharacterFilterValue] = useState<string[]>(
       []
    );
-   // const [dormFilterValue, setDormFilterValue] = useState<any[]>([]);
-   // const [rarityFilterValue, setRarityFilterValue] = useState<any[]>([]);
+   const [isAscending, setIsAscending] = useState<boolean>(true);
+   const [sortOption, setSortOption] = useState<string>("Card ID");
 
    useEffect(() => {
       let filteredCards: GameCardStripped[] = cardData.filter((card) => {
@@ -28,26 +52,19 @@ export default function Page({ cardData }: { cardData: GameCardStripped[] }) {
             return characterFilterValue.includes(card.name.toString());
          return true;
       });
-      setCardsList(filteredCards);
-   }, [characterFilterValue, cardData]);
-
-   // useEffect(() => {
-   //    let filteredCards: any[] = cardData.filter((card) => {
-   //       if (dormFilterValue.length)
-   //          return dormFilterValue.includes(card.studentdorm.toString());
-   //       return true;
-   //    });
-   //    setCardsList(filteredCards);
-   // }, [dormFilterValue]);
-
-   // useEffect(() => {
-   //    let filteredCards: any[] = cardData.filter((card) => {
-   //       if (rarityFilterValue.length)
-   //          return rarityFilterValue.includes(card.cardrarity.toString());
-   //       return true;
-   //    });
-   //    setCardsList(filteredCards);
-   // }, [rarityFilterValue]);
+      if (isAscending && sortOption === "Card ID")
+         setCardsList(filteredCards.sort((a, b) => a.cardID - b.cardID));
+      else if (isAscending && sortOption === "Character")
+         setCardsList(
+            filteredCards.sort((a, b) => a.internalCardID - b.internalCardID)
+         );
+      else if (!isAscending && sortOption === "Card ID")
+         setCardsList(filteredCards.sort((a, b) => b.cardID - a.cardID));
+      else if (!isAscending && sortOption === "Character")
+         setCardsList(
+            filteredCards.sort((a, b) => b.internalCardID - a.internalCardID)
+         );
+   }, [characterFilterValue, isAscending, sortOption]);
 
    useEffect(() => {
       setSlicedCardsList(cardsList.slice(0, count));
@@ -65,9 +82,9 @@ export default function Page({ cardData }: { cardData: GameCardStripped[] }) {
             onClick={toggle}
             variant="outline"
             color="gray"
-            className="mb-3 w-1/2 sm:w-1/3"
+            className="mb-3 w-full sm:w-1/3"
          >
-            Filter
+            Sort/Filter
          </Button>
          <Collapse in={opened}>
             <MultiSelect
@@ -75,31 +92,23 @@ export default function Page({ cardData }: { cardData: GameCardStripped[] }) {
                clearable
                value={characterFilterValue}
                onChange={setCharacterFilterValue}
-               className="mb-3 w-2/3 sm:w-1/3"
+               className="mb-3 w-full sm:w-1/3"
                data={CharacterList}
                label="Characters"
                placeholder="Pick a character"
             ></MultiSelect>
-            {/* <MultiSelect
-               searchable
-               clearable
-               value={dormFilterValue}
-               onChange={setDormFilterValue}
-               className="mb-3 w-2/3 sm:w-1/3"
-               data={DormList}
-               label="Dorms"
-               placeholder="Pick a dorm"
-            ></MultiSelect>
-            <MultiSelect
-               searchable
-               clearable
-               value={rarityFilterValue}
-               onChange={setRarityFilterValue}
-               className="mb-3 w-2/3 sm:w-1/3"
-               data={["R", "SR", "SSR"]}
-               label="Rarity"
-               placeholder="Pick a rarity"
-            ></MultiSelect> */}
+            <Select
+               label="Sort Options"
+               placeholder="Card ID"
+               data={["Card ID", "Character"]}
+               className="mb-3 w-full sm:w-1/3"
+               defaultValue={"Card ID"}
+               value={sortOption}
+               onChange={toggleSortOption}
+            ></Select>
+            <ActionIcon variant="outline" onClick={toggleSortDirection}>
+               <ArrowsSort />
+            </ActionIcon>
          </Collapse>
          <InfiniteScroll
             dataLength={slicedCardsList.length}
@@ -131,6 +140,7 @@ export async function getStaticProps() {
          rarity: card.cardrarity,
          name: card.studentname,
          title: card.cardtitle,
+         internalCardID: card.internalid,
       });
    });
    return {
