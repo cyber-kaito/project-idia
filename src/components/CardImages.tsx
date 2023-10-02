@@ -1,5 +1,6 @@
 import { Tabs } from "@mantine/core";
 import { getAssetURL } from "../utils";
+import Image from "next/image";
 
 export default function CardTabs({ card }: { card: GameCard }) {
    return (
@@ -17,7 +18,7 @@ export default function CardTabs({ card }: { card: GameCard }) {
             </Tabs.List>
 
             <Tabs.Panel value="normal" pt="xs">
-               <img
+               <Image
                   className="flex justify-center items-center w-full"
                   src={getAssetURL(
                      `images_webp/cards/full_${card.cardID}_normal.webp`
@@ -25,11 +26,14 @@ export default function CardTabs({ card }: { card: GameCard }) {
                   alt={card.title}
                   loading="lazy"
                   decoding="async"
+                  width={1920}
+                  height={1080}
+                  unoptimized
                />
             </Tabs.Panel>
 
             <Tabs.Panel value="groovy" pt="xs">
-               <img
+               <Image
                   className="flex justify-center items-center w-full"
                   src={getAssetURL(
                      `images_webp/cards/full_${card.cardID}_groovy.webp`
@@ -37,11 +41,14 @@ export default function CardTabs({ card }: { card: GameCard }) {
                   alt={card.title}
                   loading="lazy"
                   decoding="async"
+                  width={1920}
+                  height={1080}
+                  unoptimized
                />
             </Tabs.Panel>
 
             <Tabs.Panel value="outfit" pt="xs">
-               <img
+               <Image
                   className="flex justify-center items-center w-full m-auto sm:w-1/2"
                   src={getAssetURL(
                      `images_webp/outfits/outfit_${card.cardID}.webp`
@@ -49,6 +56,9 @@ export default function CardTabs({ card }: { card: GameCard }) {
                   alt={card.title}
                   loading="lazy"
                   decoding="async"
+                  width={512}
+                  height={512}
+                  unoptimized
                />
             </Tabs.Panel>
          </Tabs>

@@ -1,5 +1,6 @@
 import { Divider, Grid, Accordion, Text } from "@mantine/core";
 import { getAssetURL } from "../utils";
+import Image from "next/image";
 
 function BuddyDisplay({ card }: { card: GameCard }) {
    if (card.rarity === "SSR") {
@@ -128,39 +129,51 @@ function BuddyDisplay({ card }: { card: GameCard }) {
 function SpellElement({ spell }: { spell: string }) {
    if (spell.startsWith("Fire") || spell.startsWith("Flame")) {
       return (
-         <img
+         <Image
             src={getAssetURL(`images_webp/ui/banners/fire.webp`)}
             alt="Fire element banner"
             loading="lazy"
             decoding="async"
-         ></img>
+            width={50}
+            height={59}
+            unoptimized
+         ></Image>
       );
    } else if (spell.startsWith("Water") || spell.startsWith("Aqua")) {
       return (
-         <img
+         <Image
             src={getAssetURL(`images_webp/ui/banners/water.webp`)}
             alt="Water element banner"
             loading="lazy"
             decoding="async"
-         ></img>
+            width={50}
+            height={59}
+            unoptimized
+         ></Image>
       );
    } else if (spell.startsWith("Leaf") || spell.startsWith("Forest")) {
       return (
-         <img
+         <Image
             src={getAssetURL(`images_webp/ui/banners/flora.webp`)}
             alt="Flora element banner"
             loading="lazy"
             decoding="async"
-         ></img>
+            width={50}
+            height={59}
+            unoptimized
+         ></Image>
       );
    } else {
       return (
-         <img
+         <Image
             src={getAssetURL(`images_webp/ui/banners/cosmic.webp`)}
             alt="Cosmic element banner"
             loading="lazy"
             decoding="async"
-         ></img>
+            width={50}
+            height={59}
+            unoptimized
+         ></Image>
       );
    }
 }
@@ -283,267 +296,22 @@ function SpellDisplay({ card }: { card: GameCard }) {
 }
 
 function BuddyIcon({ buddy }: { buddy: string }) {
-   if (buddy.startsWith("Riddle")) {
-      return (
-         <img
-            className="w-24"
-            src={getAssetURL(
-               `images_webp/thumbnails/characters/riddle_icon.webp`
-            )}
-            alt="Riddle icon"
-            loading="lazy"
-            decoding="async"
-         ></img>
-      );
-   } else if (buddy.startsWith("Ace")) {
-      return (
-         <img
-            className="w-24"
-            src={getAssetURL(`images_webp/thumbnails/characters/ace_icon.webp`)}
-            alt="Ace icon"
-            loading="lazy"
-            decoding="async"
-         ></img>
-      );
-   } else if (buddy.startsWith("Deuce")) {
-      return (
-         <img
-            className="w-24"
-            src={getAssetURL(
-               `images_webp/thumbnails/characters/deuce_icon.webp`
-            )}
-            alt="Deuce icon"
-            loading="lazy"
-            decoding="async"
-         ></img>
-      );
-   } else if (buddy.startsWith("Cater")) {
-      return (
-         <img
-            className="w-24"
-            src={getAssetURL(
-               `images_webp/thumbnails/characters/cater_icon.webp`
-            )}
-            alt="Cater icon"
-            loading="lazy"
-            decoding="async"
-         ></img>
-      );
-   } else if (buddy.startsWith("Trey")) {
-      return (
-         <img
-            className="w-24"
-            src={getAssetURL(
-               `images_webp/thumbnails/characters/trey_icon.webp`
-            )}
-            alt="Trey icon"
-            loading="lazy"
-            decoding="async"
-         ></img>
-      );
-   } else if (buddy.startsWith("Leona")) {
-      return (
-         <img
-            className="w-24"
-            src={getAssetURL(
-               `images_webp/thumbnails/characters/leona_icon.webp`
-            )}
-            alt="Leona icon"
-            loading="lazy"
-            decoding="async"
-         ></img>
-      );
-   } else if (buddy.startsWith("Jack")) {
-      return (
-         <img
-            className="w-24"
-            src={getAssetURL(
-               `images_webp/thumbnails/characters/jack_icon.webp`
-            )}
-            alt="Jack icon"
-            loading="lazy"
-            decoding="async"
-         ></img>
-      );
-   } else if (buddy.startsWith("Ruggie")) {
-      return (
-         <img
-            className="w-24"
-            src={getAssetURL(
-               `images_webp/thumbnails/characters/ruggie_icon.webp`
-            )}
-            alt="Ruggie icon"
-            loading="lazy"
-            decoding="async"
-         ></img>
-      );
-   } else if (buddy.startsWith("Azul")) {
-      return (
-         <img
-            className="w-24"
-            src={getAssetURL(
-               `images_webp/thumbnails/characters/azul_icon.webp`
-            )}
-            alt="Azul icon"
-            loading="lazy"
-            decoding="async"
-         ></img>
-      );
-   } else if (buddy.startsWith("Jade")) {
-      return (
-         <img
-            className="w-24"
-            src={getAssetURL(
-               `images_webp/thumbnails/characters/jade_icon.webp`
-            )}
-            alt="Jade icon"
-            loading="lazy"
-            decoding="async"
-         ></img>
-      );
-   } else if (buddy.startsWith("Floyd")) {
-      return (
-         <img
-            className="w-24"
-            src={getAssetURL(
-               `images_webp/thumbnails/characters/floyd_icon.webp`
-            )}
-            alt="Floyd icon"
-            loading="lazy"
-            decoding="async"
-         ></img>
-      );
-   } else if (buddy.startsWith("Kalim")) {
-      return (
-         <img
-            className="w-24"
-            src={getAssetURL(
-               `images_webp/thumbnails/characters/kalim_icon.webp`
-            )}
-            alt="Kalim icon"
-            loading="lazy"
-            decoding="async"
-         ></img>
-      );
-   } else if (buddy.startsWith("Jamil")) {
-      return (
-         <img
-            className="w-24"
-            src={getAssetURL(
-               `images_webp/thumbnails/characters/jamil_icon.webp`
-            )}
-            alt="Jamil icon"
-            loading="lazy"
-            decoding="async"
-         ></img>
-      );
-   } else if (buddy.startsWith("Vil")) {
-      return (
-         <img
-            className="w-24"
-            src={getAssetURL(`images_webp/thumbnails/characters/vil_icon.webp`)}
-            alt="Vil icon"
-            loading="lazy"
-            decoding="async"
-         ></img>
-      );
-   } else if (buddy.startsWith("Epel")) {
-      return (
-         <img
-            className="w-24"
-            src={getAssetURL(
-               `images_webp/thumbnails/characters/epel_icon.webp`
-            )}
-            alt="Epel icon"
-            loading="lazy"
-            decoding="async"
-         ></img>
-      );
-   } else if (buddy.startsWith("Rook")) {
-      return (
-         <img
-            className="w-24"
-            src={getAssetURL(
-               `images_webp/thumbnails/characters/rook_icon.webp`
-            )}
-            alt="Rook icon"
-            loading="lazy"
-            decoding="async"
-         ></img>
-      );
-   } else if (buddy.startsWith("Idia")) {
-      return (
-         <img
-            className="w-24"
-            src={getAssetURL(
-               `images_webp/thumbnails/characters/idia_icon.webp`
-            )}
-            alt="Idia icon"
-            loading="lazy"
-            decoding="async"
-         ></img>
-      );
-   } else if (buddy.startsWith("Ortho")) {
-      return (
-         <img
-            className="w-24"
-            src={getAssetURL(
-               `images_webp/thumbnails/characters/ortho_icon.webp`
-            )}
-            alt="Ortho icon"
-            loading="lazy"
-            decoding="async"
-         ></img>
-      );
-   } else if (buddy.startsWith("Malleus")) {
-      return (
-         <img
-            className="w-24"
-            src={getAssetURL(
-               `images_webp/thumbnails/characters/malleus_icon.webp`
-            )}
-            alt="Malleus icon"
-            loading="lazy"
-            decoding="async"
-         ></img>
-      );
-   } else if (buddy.startsWith("Silver")) {
-      return (
-         <img
-            className="w-24"
-            src={getAssetURL(
-               `images_webp/thumbnails/characters/silver_icon.webp`
-            )}
-            alt="Silver icon"
-            loading="lazy"
-            decoding="async"
-         ></img>
-      );
-   } else if (buddy.startsWith("Sebek")) {
-      return (
-         <img
-            className="w-24"
-            src={getAssetURL(
-               `images_webp/thumbnails/characters/sebek_icon.webp`
-            )}
-            alt="Sebek icon"
-            loading="lazy"
-            decoding="async"
-         ></img>
-      );
-   } else if (buddy.startsWith("Lilia")) {
-      return (
-         <img
-            className="w-24"
-            src={getAssetURL(
-               `images_webp/thumbnails/characters/lilia_icon.webp`
-            )}
-            alt="Lilia icon"
-            loading="lazy"
-            decoding="async"
-         ></img>
-      );
-   }
+   const split = buddy.split(" ");
+   const buddyName = split[0].toLowerCase();
+   return (
+      <Image
+         className="w-24"
+         src={getAssetURL(
+            `images_webp/thumbnails/characters/${buddyName}_icon.webp`
+         )}
+         alt={buddy}
+         loading="lazy"
+         decoding="async"
+         width={256}
+         height={256}
+         unoptimized
+      ></Image>
+   );
 }
 
 export default function CardInfo({ card }: { card: GameCard }) {
@@ -645,7 +413,7 @@ export default function CardInfo({ card }: { card: GameCard }) {
                         span={2}
                         className="text-md sm:text-lg text-right my-auto"
                      >
-                        <img
+                        <Image
                            className="w-24"
                            src={getAssetURL(
                               `images_webp/thumbnails/cards/thumb_${card.cardID}_normal.webp`
@@ -653,13 +421,16 @@ export default function CardInfo({ card }: { card: GameCard }) {
                            alt={card.title}
                            loading="lazy"
                            decoding="async"
-                        ></img>
+                           width={256}
+                           height={256}
+                           unoptimized
+                        ></Image>
                      </Grid.Col>
                      <Grid.Col
                         span={2}
                         className="text-md sm:text-lg text-right my-auto"
                      >
-                        <img
+                        <Image
                            className="w-24"
                            src={getAssetURL(
                               `images_webp/thumbnails/cards/thumb_${card.cardID}_groovy.webp`
@@ -667,7 +438,10 @@ export default function CardInfo({ card }: { card: GameCard }) {
                            alt={card.title}
                            loading="lazy"
                            decoding="async"
-                        ></img>
+                           width={256}
+                           height={256}
+                           unoptimized
+                        ></Image>
                      </Grid.Col>
                   </Grid>
                </Accordion.Panel>

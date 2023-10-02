@@ -13,6 +13,7 @@ import { getAssetURL } from "../utils";
 // import alchemy_data from "../data/alchemy.json";
 // import gauntlet_data from "../data/gauntlet.json";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
+import Image from "next/image";
 
 // function AlchemyCharacters({ setNumber }: { setNumber: number }) {
 //    if (setNumber === 1 || setNumber === 3 || setNumber === 5) {
@@ -309,13 +310,16 @@ export default function Page() {
                </Text>
             </Paper>
             <Center>
-               <img
+               <Image
                   src="/idia_sticker.webp"
                   alt="Idia Shroud sticker"
                   loading="lazy"
                   decoding="async"
                   className="w-7/12"
-               ></img>
+                  width={420}
+                  height={420}
+                  unoptimized
+               ></Image>
             </Center>
             <Center>
                <Text fz="sm" fs="italic">
