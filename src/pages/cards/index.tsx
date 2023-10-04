@@ -87,28 +87,36 @@ export default function Page({ cardData }: { cardData: GameCardStripped[] }) {
             Sort/Filter
          </Button>
          <Collapse in={opened}>
-            <MultiSelect
-               searchable
-               clearable
-               value={characterFilterValue}
-               onChange={setCharacterFilterValue}
-               className="mb-3 w-full sm:w-1/3"
-               data={CharacterList}
-               label="Characters"
-               placeholder="Pick a character"
-            ></MultiSelect>
-            <Select
-               label="Sort Options"
-               placeholder="Card ID"
-               data={["Card ID", "Character"]}
-               className="mb-3 w-full sm:w-1/3"
-               defaultValue={"Card ID"}
-               value={sortOption}
-               onChange={toggleSortOption}
-            ></Select>
-            <ActionIcon variant="outline" onClick={toggleSortDirection}>
-               <ArrowsSort />
-            </ActionIcon>
+            <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-4">
+               <MultiSelect
+                  searchable
+                  clearable
+                  value={characterFilterValue}
+                  onChange={setCharacterFilterValue}
+                  className="mb-3 w-full"
+                  data={CharacterList}
+                  label="Characters"
+                  placeholder="Pick a character"
+               ></MultiSelect>
+               <div className="grid grid-cols-12 gap-4">
+                  <Select
+                     label="Sort Options"
+                     placeholder="Card ID"
+                     data={["Card ID", "Character"]}
+                     className="mb-3 w-full col-span-10"
+                     defaultValue={"Card ID"}
+                     value={sortOption}
+                     onChange={toggleSortOption}
+                  ></Select>
+                  <ActionIcon
+                     variant="outline"
+                     onClick={toggleSortDirection}
+                     className="mt-7 ml-2 col-span-2"
+                  >
+                     <ArrowsSort />
+                  </ActionIcon>
+               </div>
+            </div>
          </Collapse>
          <InfiniteScroll
             dataLength={slicedCardsList.length}

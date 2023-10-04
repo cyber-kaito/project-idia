@@ -7,54 +7,54 @@ function BuddyDisplay({ card }: { card: GameCard }) {
       return (
          <>
             <Grid justify="space-between" className="pt-3 pb-2">
-               <Grid.Col span={2} className="my-auto">
+               <Grid.Col span={3} className="my-auto">
                   <BuddyIcon buddy={card.buddy1} />
                </Grid.Col>
                <Grid.Col
-                  span={5}
-                  className="text-md sm:text-lg font-bold my-auto"
+                  span={4}
+                  className="text-md sm:text-lg font-bold my-auto break-normal"
                >
                   {card.buddy1}
                </Grid.Col>
                <Grid.Col
                   span={5}
-                  className="text-md sm:text-lg text-right my-auto"
+                  className="text-md sm:text-lg text-right my-auto break-normal"
                >
                   {card.bonus1}
                </Grid.Col>
             </Grid>
             <Divider></Divider>
             <Grid justify="space-between" className="pt-3 pb-2">
-               <Grid.Col span={2} className="my-auto">
+               <Grid.Col span={3} className="my-auto">
                   <BuddyIcon buddy={card.buddy2} />
                </Grid.Col>
                <Grid.Col
-                  span={5}
-                  className="text-md sm:text-lg font-bold my-auto"
+                  span={4}
+                  className="text-md sm:text-lg font-bold my-auto break-normal"
                >
                   {card.buddy2}
                </Grid.Col>
                <Grid.Col
                   span={5}
-                  className="text-md sm:text-lg text-right my-auto"
+                  className="text-md sm:text-lg text-right my-auto break-normal"
                >
                   {card.bonus2}
                </Grid.Col>
             </Grid>
             <Divider></Divider>
             <Grid justify="space-between" className="pt-3">
-               <Grid.Col span={2} className="my-auto">
+               <Grid.Col span={3} className="my-auto">
                   <BuddyIcon buddy={card.buddy3} />
                </Grid.Col>
                <Grid.Col
-                  span={5}
-                  className="text-md sm:text-lg font-bold my-auto"
+                  span={4}
+                  className="text-md sm:text-lg font-bold my-auto break-normal"
                >
                   {card.buddy3}
                </Grid.Col>
                <Grid.Col
                   span={5}
-                  className="text-md sm:text-lg text-right my-auto"
+                  className="text-md sm:text-lg text-right my-auto break-normal"
                >
                   {card.bonus3}
                </Grid.Col>
@@ -65,36 +65,36 @@ function BuddyDisplay({ card }: { card: GameCard }) {
       return (
          <>
             <Grid justify="space-between" className="pt-3 pb-2">
-               <Grid.Col span={2} className="my-auto">
+               <Grid.Col span={3} className="my-auto">
                   <BuddyIcon buddy={card.buddy1} />
                </Grid.Col>
                <Grid.Col
-                  span={5}
-                  className="text-md sm:text-lg font-bold my-auto"
+                  span={4}
+                  className="text-md sm:text-lg font-bold my-auto break-normal"
                >
                   {card.buddy1}
                </Grid.Col>
                <Grid.Col
                   span={5}
-                  className="text-md sm:text-lg text-right my-auto"
+                  className="text-md sm:text-lg text-right my-auto break-normal"
                >
                   {card.bonus1}
                </Grid.Col>
             </Grid>
             <Divider></Divider>
             <Grid justify="space-between" className="pt-3 pb-2">
-               <Grid.Col span={2} className="my-auto">
+               <Grid.Col span={3} className="my-auto">
                   <BuddyIcon buddy={card.buddy2} />
                </Grid.Col>
                <Grid.Col
-                  span={5}
-                  className="text-md sm:text-lg font-bold my-auto"
+                  span={4}
+                  className="text-md sm:text-lg font-bold my-auto break-normal"
                >
                   {card.buddy2}
                </Grid.Col>
                <Grid.Col
                   span={5}
-                  className="text-md sm:text-lg text-right my-auto"
+                  className="text-md sm:text-lg text-right my-auto break-normal"
                >
                   {card.bonus2}
                </Grid.Col>
@@ -105,18 +105,18 @@ function BuddyDisplay({ card }: { card: GameCard }) {
       return (
          <>
             <Grid justify="space-between" className="pt-3 pb-2">
-               <Grid.Col span={2} className="my-auto">
+               <Grid.Col span={3} className="my-auto">
                   <BuddyIcon buddy={card.buddy1} />
                </Grid.Col>
                <Grid.Col
-                  span={5}
-                  className="text-md sm:text-lg font-bold my-auto"
+                  span={4}
+                  className="text-md sm:text-lg font-bold my-auto break-normal"
                >
                   {card.buddy1}
                </Grid.Col>
                <Grid.Col
                   span={5}
-                  className="text-md sm:text-lg text-right my-auto"
+                  className="text-md sm:text-lg text-right my-auto break-normal"
                >
                   {card.bonus1}
                </Grid.Col>
@@ -300,7 +300,7 @@ function BuddyIcon({ buddy }: { buddy: string }) {
    const buddyName = split[0].toLowerCase();
    return (
       <Image
-         className="w-24"
+         className="sm:w-24"
          src={getAssetURL(
             `images_webp/thumbnails/characters/${buddyName}_icon.webp`
          )}
@@ -409,12 +409,9 @@ export default function CardInfo({ card }: { card: GameCard }) {
                      >
                         Thumbnail
                      </Grid.Col>
-                     <Grid.Col
-                        span={2}
-                        className="text-md sm:text-lg text-right my-auto"
-                     >
+                     <Grid.Col span={4} className="">
                         <Image
-                           className="w-24"
+                           className="sm:w-24 mb-3 ml-auto"
                            src={getAssetURL(
                               `images_webp/thumbnails/cards/thumb_${card.cardID}_normal.webp`
                            )}
@@ -425,13 +422,8 @@ export default function CardInfo({ card }: { card: GameCard }) {
                            height={256}
                            unoptimized
                         ></Image>
-                     </Grid.Col>
-                     <Grid.Col
-                        span={2}
-                        className="text-md sm:text-lg text-right my-auto"
-                     >
                         <Image
-                           className="w-24"
+                           className="sm:w-24 ml-auto"
                            src={getAssetURL(
                               `images_webp/thumbnails/cards/thumb_${card.cardID}_groovy.webp`
                            )}
