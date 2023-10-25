@@ -130,7 +130,7 @@ function SpellElement({ spell }: { spell: string }) {
    if (spell.startsWith("Fire") || spell.startsWith("Flame")) {
       return (
          <Image
-            src={getAssetURL(`images_webp/ui/banners/fire.webp`)}
+            src={getAssetURL(`images-webp/ui/banners/fire.webp`)}
             alt="Fire element banner"
             loading="lazy"
             decoding="async"
@@ -142,7 +142,7 @@ function SpellElement({ spell }: { spell: string }) {
    } else if (spell.startsWith("Water") || spell.startsWith("Aqua")) {
       return (
          <Image
-            src={getAssetURL(`images_webp/ui/banners/water.webp`)}
+            src={getAssetURL(`images-webp/ui/banners/water.webp`)}
             alt="Water element banner"
             loading="lazy"
             decoding="async"
@@ -154,7 +154,7 @@ function SpellElement({ spell }: { spell: string }) {
    } else if (spell.startsWith("Leaf") || spell.startsWith("Forest")) {
       return (
          <Image
-            src={getAssetURL(`images_webp/ui/banners/flora.webp`)}
+            src={getAssetURL(`images-webp/ui/banners/flora.webp`)}
             alt="Flora element banner"
             loading="lazy"
             decoding="async"
@@ -166,7 +166,7 @@ function SpellElement({ spell }: { spell: string }) {
    } else {
       return (
          <Image
-            src={getAssetURL(`images_webp/ui/banners/cosmic.webp`)}
+            src={getAssetURL(`images-webp/ui/banners/cosmic.webp`)}
             alt="Cosmic element banner"
             loading="lazy"
             decoding="async"
@@ -302,7 +302,7 @@ function BuddyIcon({ buddy }: { buddy: string }) {
       <Image
          className="sm:w-24"
          src={getAssetURL(
-            `images_webp/thumbnails/characters/${buddyName}_icon.webp`
+            `images-webp/thumbnails/characters/${buddyName}_icon.webp`
          )}
          alt={buddy}
          loading="lazy"
@@ -413,7 +413,7 @@ export default function CardInfo({ card }: { card: GameCard }) {
                         <Image
                            className="sm:w-24 mb-3 ml-auto"
                            src={getAssetURL(
-                              `images_webp/thumbnails/cards/thumb_${card.cardID}_normal.webp`
+                              `images-webp/thumbnails/cards/card_${card.internalCardID}_c_f.webp`
                            )}
                            alt={card.title}
                            loading="lazy"
@@ -425,7 +425,7 @@ export default function CardInfo({ card }: { card: GameCard }) {
                         <Image
                            className="sm:w-24 ml-auto"
                            src={getAssetURL(
-                              `images_webp/thumbnails/cards/thumb_${card.cardID}_groovy.webp`
+                              `images-webp/thumbnails/cards/card_${card.internalCardID}_g_f.webp`
                            )}
                            alt={card.title}
                            loading="lazy"

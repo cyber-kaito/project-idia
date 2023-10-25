@@ -7,7 +7,7 @@ function CardRarity({ rarity }: { rarity: string }) {
    if (rarity === "R") {
       return (
          <Image
-            src={getAssetURL(`images_webp/ui/banners/r_banner.webp`)}
+            src={getAssetURL(`images-webp/ui/banners/r_banner.webp`)}
             alt="R banner"
             className="absolute z-10 w-10 -mt-1 ml-1"
             loading="lazy"
@@ -20,7 +20,7 @@ function CardRarity({ rarity }: { rarity: string }) {
    } else if (rarity === "SR") {
       return (
          <Image
-            src={getAssetURL(`images_webp/ui/banners/sr_banner.webp`)}
+            src={getAssetURL(`images-webp/ui/banners/sr_banner.webp`)}
             alt="SR banner"
             className="absolute z-10 w-10 -mt-1 ml-1"
             loading="lazy"
@@ -33,7 +33,7 @@ function CardRarity({ rarity }: { rarity: string }) {
    } else {
       return (
          <Image
-            src={getAssetURL(`images_webp/ui/banners/ssr_banner.webp`)}
+            src={getAssetURL(`images-webp/ui/banners/ssr_banner.webp`)}
             alt="SSR banner"
             className="absolute z-10 w-10 -mt-1 ml-1"
             loading="lazy"
@@ -62,7 +62,7 @@ export default function GalleryCard({ card }: { card: GameCardStripped }) {
                <div className="flex flex-row items-center justify-center">
                   <Image
                      src={getAssetURL(
-                        `images_webp/cards/full_${card.cardID}_normal.webp`
+                        `images-webp/cards/card_${card.internalCardID}_c_l.webp`
                      )}
                      alt={card.title}
                      className="rounded-tl-[3px] w-1/2"
@@ -74,7 +74,7 @@ export default function GalleryCard({ card }: { card: GameCardStripped }) {
                   />
                   <Image
                      src={getAssetURL(
-                        `images_webp/cards/full_${card.cardID}_groovy.webp`
+                        `images-webp/cards/card_${card.internalCardID}_g_l.webp`
                      )}
                      alt={card.title}
                      className="rounded-tr-[3px] w-1/2"

@@ -21,7 +21,7 @@ export default function CardTabs({ card }: { card: GameCard }) {
                <Image
                   className="flex justify-center items-center w-full"
                   src={getAssetURL(
-                     `images_webp/cards/full_${card.cardID}_normal.webp`
+                     `images-webp/cards/card_${card.internalCardID}_c_l.webp`
                   )}
                   alt={card.title}
                   loading="lazy"
@@ -36,7 +36,7 @@ export default function CardTabs({ card }: { card: GameCard }) {
                <Image
                   className="flex justify-center items-center w-full"
                   src={getAssetURL(
-                     `images_webp/cards/full_${card.cardID}_groovy.webp`
+                     `images-webp/cards/card_${card.internalCardID}_g_l.webp`
                   )}
                   alt={card.title}
                   loading="lazy"
@@ -51,7 +51,7 @@ export default function CardTabs({ card }: { card: GameCard }) {
                <Image
                   className="flex justify-center items-center w-full m-auto sm:w-1/2"
                   src={getAssetURL(
-                     `images_webp/outfits/outfit_${card.cardID}.webp`
+                     `images-webp/outfits/sd_${card.internalCardID}0.webp`
                   )}
                   alt={card.title}
                   loading="lazy"
