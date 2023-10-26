@@ -24,7 +24,6 @@ Most of the data on this website is sourced from the [Twisted Wonderland Wiki](h
 
 ## Planned Features
 
--  View information on past and present events and gacha banners
 -  View character profiles
 -  Customize and build card teams
 -  View today's and upcoming alchemy lessons and furniture material rewards
